@@ -9,7 +9,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem 'haml'
-  config.gem 'thoughtbot-shoulda', :lib => 'shoulda/rails', :source => 'http://gems.github.com/'
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
@@ -20,8 +19,8 @@ Rails::Initializer.run do |config|
 
   config.after_initialize do
     ActionController::Base.session = {
-      :key         => '_ujumbe_session',
-      :secret      => ApplicationConfiguration[:secret]
+      :key    => '_ujumbe_session',
+      :secret => Application[:secret]
     }
   end
 end

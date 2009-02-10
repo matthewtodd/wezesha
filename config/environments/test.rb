@@ -25,3 +25,8 @@ config.action_mailer.delivery_method = :test
 # This is necessary if your schema can't be completely dumped by the schema dumper,
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
+
+# Specify gems that this application depends on and have them installed with RAILS_ENV=test rake gems:install
+config.gem 'cucumber',           :lib => false
+config.gem 'thoughtbot-shoulda', :lib => false, :source => 'http://gems.github.com/'
+config.gem 'webrat',             :lib => false
