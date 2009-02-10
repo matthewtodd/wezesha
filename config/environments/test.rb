@@ -27,6 +27,9 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 
 # Specify gems that this application depends on and have them installed with RAILS_ENV=test rake gems:install
-config.gem 'cucumber',           :lib => false
-config.gem 'thoughtbot-shoulda', :lib => false, :source => 'http://gems.github.com/'
-config.gem 'webrat',             :lib => false
+config.gem 'thoughtbot-shoulda', :lib => 'shoulda', :source => 'http://gems.github.com/'
+
+# SubdomainFu would say the TLD of "test.host", the Rails default, is "host"
+config.after_initialize do
+  SubdomainFu.tld_size = 1
+end

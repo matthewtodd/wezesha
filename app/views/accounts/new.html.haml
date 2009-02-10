@@ -1,0 +1,27 @@
+%h2 Sign Up
+- form_for prepare_new_account(@account) do |form|
+  - if @account.errors.any?
+    .errors
+      = @account.errors.full_messages.to_sentence
+
+  .field
+    = form.label :subdomain
+    = form.text_field :subdomain
+
+  - form.fields_for :users do |user_form|
+    - if user_form.object.errors.any?
+      .errors
+        = user_form.object.errors.full_messages.to_sentence
+
+    .field
+      = user_form.label :email
+      = user_form.text_field :email
+    .field
+      = user_form.label :password
+      = user_form.password_field :password
+    .field
+      = user_form.label :password_confirmation
+      = user_form.password_field :password_confirmation
+
+  .field
+    = form.submit 'Sign Up'

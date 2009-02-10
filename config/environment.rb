@@ -8,7 +8,9 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
+  config.gem 'authlogic'
   config.gem 'haml'
+  config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
