@@ -1,0 +1,23 @@
+== Technical
+* ActiveResource-accessible
+* open-sourced on GitHub, along with ActiveResource-based client library
+* subdomains for accounts: joachim.ujumbe.co.tz
+* web interface to:
+  * manage API keys
+  * buy credit
+  * view history
+* unlimited messages to one phone number? (very useful for developing) (idea needs to be adjusted to prevent / deal with abuse)
+
+== Business Relationships
+* talk with Vodacom
+* how do we set up a business? Would Nshange sponsor / help out with paperwork?
+* where would we host locally? Talk with Kicheko?
+
+== Marketing
+* banks? Online balance checking. (Read-only operations are far easier / safer.)
+* something like Ushahidi?
+* social networking apps only make money by advertising
+
+== Networking
+* Richard Manyanza
+* Eric Hersman (White African)
