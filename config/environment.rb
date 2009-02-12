@@ -19,10 +19,14 @@ Rails::Initializer.run do |config|
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.time_zone = 'UTC'
 
+  config.i18n.load_path << Rails.root.join('vendor', 'rails-i18n', 'rails', 'locale', 'sw.yml')
+
   config.after_initialize do
     ActionController::Base.session = {
       :key    => '_ujumbe_session',
       :secret => Application[:secret]
     }
+
+    ActionView::Base.default_form_builder = ApplicationHelper::LocalizedFormBuilder
   end
 end

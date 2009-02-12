@@ -1,0 +1,7 @@
+= yield
+
+- if request.get?
+  %ul#locales
+    / FIXME loop through I18n.available_locales -- need a convention for getting language name
+    %li= link_to_unless_current 'English', url_for(:locale => 'en')
+    %li= link_to_unless_current 'Kiswahili', url_for(:locale => 'sw')

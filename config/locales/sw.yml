@@ -1,0 +1,25 @@
+sw:
+  sign_up: 'Jiandikishe'
+
+  activerecord:
+    attributes:
+      account:
+        subdomain: 'Subdomain'
+      user:
+        email: 'Anuani ya barua pepe'
+        password: 'Namba ya siri'
+        password_confirmation: 'Thibitisha namba ya siri'
+
+  authlogic:
+    error_messages:
+      # login_blank: can not be blank
+      # login_not_found: does not exist
+      # login_invalid: should use only letters, numbers, spaces, and .-_@ please
+      email_invalid: 'inatakiwa iwe kama jina@example.com'
+      # password_blank: can not be blank
+      # password_invalid: is not valid
+      # not_active: Your account is not active
+      # not_confirmed: Your account is not confirmed
+      # not_approved: Your account is not approved
+      # blank_record: You can not login with a blank record
+      # new_record: You can not login with a new record

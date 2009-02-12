@@ -1,4 +1,4 @@
-%h2 Sign Up
+%h2= t(:sign_up)
 - form_for prepare_new_account(@account) do |form|
   - if @account.errors.any?
     .errors
@@ -6,7 +6,8 @@
 
   .field
     = form.label :subdomain
-    = form.text_field :subdomain
+    / FIXME extract (or find) a method for current_host
+    = form.text_field(:subdomain) + ".#{request.host}"
 
   - form.fields_for :users do |user_form|
     - if user_form.object.errors.any?
@@ -24,4 +25,4 @@
       = user_form.password_field :password_confirmation
 
   .field
-    = form.submit 'Sign Up'
+    = form.submit t(:sign_up)

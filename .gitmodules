@@ -1,0 +1,6 @@
+[submodule "vendor/rails-i18n"]
+	path = vendor/rails-i18n
+	url = git://github.com/matthewtodd/rails-i18n.git
+[submodule "vendor/plugins/routing-filter"]
+	path = vendor/plugins/routing-filter
+	url = git://github.com/matthewtodd/routing-filter.git
