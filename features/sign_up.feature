@@ -6,7 +6,7 @@ Feature: Sign Up
   Scenario: Successful Sign Up
     Given I am on the home page
     When I follow "Sign Up"
-    And I fill in "Subdomain" with "developer"
+    And I fill in "Subdomain" with "subdomain"
     And I fill in "Email" with "developer@example.com"
     And I fill in "Password" with "secret"
     And I fill in "Password Confirmation" with "secret"
@@ -15,7 +15,7 @@ Feature: Sign Up
 
   Scenario: Failed Sign Up
     Given I am on the sign up page
-    When I fill in "Subdomain" with "developer"
+    When I fill in "Subdomain" with "subdomain"
     And I fill in "Email" with "developer@example.com"
     And I fill in "Password" with "secret"
     And I fill in "Password Confirmation" with ""
