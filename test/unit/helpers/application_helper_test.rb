@@ -1,6 +1,32 @@
 require 'test_helper'
 
 class ApplicationHelperTest < ActionView::TestCase
+  should 'return host_without_subdomain' do
+    self.stubs(:request).returns(ActionController::TestRequest.new)
+    SubdomainFu.expects(:host_without_subdomain).with(request.host)
+    host_without_subdomain
+  end
+
+  context 'other_locales' do
+    context 'given the default locale' do
+      setup { I18n.stubs(:locale).returns(I18n.default_locale) }
+
+      should 'return the others' do
+        expected_locales = { :sw => 'Kiswahili' }.with_indifferent_access
+        assert_equal expected_locales, other_locales
+      end
+    end
+
+    context 'given another locale' do
+      setup { I18n.stubs(:locale).returns(:sw) }
+
+      should 'return the others' do
+        expected_locales = { :en => 'English' }.with_indifferent_access
+        assert_equal expected_locales, other_locales
+      end
+    end
+  end
+
   context 'LocalizedFormBuilder' do
     setup do
       @form_builder = LocalizedFormBuilder.new(:widget, @object = stub, @template = stub, {}, nil)
@@ -69,26 +95,6 @@ class ApplicationHelperTest < ActionView::TestCase
 
       before_should 'use specified and appended text' do
         @template.expects(:label).with(:widget, :foo, 'My Foo Bar', :object => @object)
-      end
-    end
-  end
-
-  context 'other_locales' do
-    context 'given the default locale' do
-      setup { I18n.stubs(:locale).returns(I18n.default_locale) }
-
-      should 'return the others' do
-        expected_locales = { :sw => 'Kiswahili' }.with_indifferent_access
-        assert_equal expected_locales, other_locales
-      end
-    end
-
-    context 'given another locale' do
-      setup { I18n.stubs(:locale).returns(:sw) }
-
-      should 'return the others' do
-        expected_locales = { :en => 'English' }.with_indifferent_access
-        assert_equal expected_locales, other_locales
       end
     end
   end

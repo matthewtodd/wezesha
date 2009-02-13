@@ -3,8 +3,7 @@
 
   .field
     = form.label :subdomain, :append_text => form.error_message_on(:subdomain)
-    / FIXME extract (or find) a method for current_host
-    = form.text_field(:subdomain) + ".#{request.host}"
+    = form.text_field(:subdomain).concat('.').concat(host_without_subdomain)
 
   - form.fields_for :users do |user_form|
     .field

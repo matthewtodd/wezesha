@@ -1,5 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def host_without_subdomain
+    SubdomainFu.host_without_subdomain(request.host)
+  end
+
   def other_locales
     {}.with_indifferent_access.tap do |other_locales|
       I18n.available_locales.each do |locale|
