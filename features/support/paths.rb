@@ -7,11 +7,11 @@ def path_to(page_name, options = {})
   when /^sign up$/i
     new_account_path(options)
 
-  when /^sign up error$/i
-    accounts_path(options)
-
   when /^sign in$/i
     new_user_session_path(options)
+
+  when /^account$/i
+    account_path(options)
 
   else
     raise "Can't find mapping from \"#{page_name}\" to a path."

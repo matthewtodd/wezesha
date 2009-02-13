@@ -30,4 +30,11 @@ Feature: Sign In
     And I am on the sign in page for my-subdomain
     When I follow "Kiswahili"
     Then I should not see "translation missing"
-
+    
+  Scenario: Sign In Required
+    Given these accounts
+    | subdomain    | email                 | password    |
+    | my-subdomain | developer@example.com | my-password |
+    And I have not signed in
+    When I go to the account page for my-subdomain
+    Then I should see "Sign In"
