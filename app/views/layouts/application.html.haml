@@ -13,7 +13,6 @@
       = yield
 
     #footer
-      - if request.get?
-        %ul#locales
-          - other_locales.each do |locale, locale_name|
-            %li= link_to locale_name, params.merge(:locale => locale)
+      %ul#locales
+        - other_locales.each do |locale, locale_name|
+          %li= link_to locale_name, params.merge(:locale => locale), :method => (request.get? ? nil : request.method)
