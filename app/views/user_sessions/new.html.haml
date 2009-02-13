@@ -1,0 +1,13 @@
+- form_for @user_session do |form|
+  %h2= t(:sign_in)
+
+  .field
+    = form.label :email, :append_text => form.error_message_on(:email)
+    = form.text_field :email
+
+  .field
+    = form.label :password, :append_text => form.error_message_on(:password)
+    = form.password_field :password
+
+  .submit
+    = form.submit t(:sign_in)

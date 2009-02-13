@@ -1,7 +1,4 @@
-def path_to(page_name, subdomain=nil)
-  options = {}
-  options[:subdomain] = subdomain
-
+def path_to(page_name, options = {})
   case page_name
 
   when /^home$/i
@@ -14,7 +11,7 @@ def path_to(page_name, subdomain=nil)
     accounts_path(options)
 
   when /^sign in$/i
-    new_session_path(options)
+    new_user_session_path(options)
 
   else
     raise "Can't find mapping from \"#{page_name}\" to a path."

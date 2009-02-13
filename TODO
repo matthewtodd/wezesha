@@ -1,3 +1,5 @@
+FIXME validate format of subdomain
+
 == Technical
 * ActiveResource-accessible
 * open-sourced on GitHub, along with ActiveResource-based client library

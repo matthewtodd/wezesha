@@ -1,6 +1,7 @@
 sw:
   locale_name: 'Kiswahili'
   sign_up: 'Jiandikishe'
+  sign_in: 'Kuingia'
 
   activerecord:
     attributes:
@@ -10,15 +11,18 @@ sw:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
         password_confirmation: 'Thibitisha neno au namba ya siri'
+      user_session:
+        email: 'Anuani ya barua pepe'
+        password: 'Neno au namba ya siri'
 
   authlogic:
     error_messages:
-      # login_blank: can not be blank
+      login_blank: 'haitakiwi kuwa wazi'
       # login_not_found: does not exist
       # login_invalid: should use only letters, numbers, spaces, and .-_@ please
       email_invalid: 'inatakiwa iwe kama jina@example.com'
-      # password_blank: can not be blank
-      # password_invalid: is not valid
+      password_blank: 'haitakiwi kuwa wazi'
+      password_invalid: 'haifai'
       # not_active: Your account is not active
       # not_confirmed: Your account is not confirmed
       # not_approved: Your account is not approved
