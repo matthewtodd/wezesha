@@ -18,6 +18,14 @@ class ApplicationHelperTest < ActionView::TestCase
           @template.expects(:label).with(:widget, :foo, 'TRANSLATED FOO', :object => @object)
         end
       end
+
+      context 'generating a label with default and appended text' do
+        setup { @form_builder.label(:foo, :append_text => 'APPENDED BAR') }
+
+        before_should 'use translated method_name and appended text' do
+          @template.expects(:label).with(:widget, :foo, 'TRANSLATED FOO APPENDED BAR', :object => @object)
+        end
+      end
     end
 
     context 'when a translation is absent' do
@@ -30,7 +38,7 @@ class ApplicationHelperTest < ActionView::TestCase
           setup { @form_builder.label(:foo) }
 
           before_should 'use default template behavior' do
-            @template.expects(:label).with(:widget, :foo, nil, :object => @object)
+            @template.expects(:label).with(:widget, :foo, 'Foo', :object => @object)
           end
         end
       end
@@ -53,6 +61,14 @@ class ApplicationHelperTest < ActionView::TestCase
 
       before_should 'use specified text' do
         @template.expects(:label).with(:widget, :foo, 'My Foo', :object => @object)
+      end
+    end
+
+    context 'generating a label with specified and appended text' do
+      setup { @form_builder.label(:foo, 'My Foo', :append_text => 'Bar') }
+
+      before_should 'use specified and appended text' do
+        @template.expects(:label).with(:widget, :foo, 'My Foo Bar', :object => @object)
       end
     end
   end

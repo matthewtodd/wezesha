@@ -3,4 +3,5 @@ config/database.yml
 db/*.sqlite3*
 doc/guides
 log
+public/stylesheets
 tmp

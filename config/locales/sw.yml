@@ -7,8 +7,8 @@ sw:
         subdomain: 'Subdomain'
       user:
         email: 'Anuani ya barua pepe'
-        password: 'Namba ya siri'
-        password_confirmation: 'Thibitisha namba ya siri'
+        password: 'Neno au namba ya siri'
+        password_confirmation: 'Thibitisha neno au namba ya siri'
 
   authlogic:
     error_messages:

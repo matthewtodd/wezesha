@@ -1,7 +1,20 @@
-= yield
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title Ujumbe
+    = stylesheet_link_tag 'reset', 'screen', :cache => true
 
-- if request.get?
-  %ul#locales
-    / FIXME loop through I18n.available_locales -- need a convention for getting language name
-    %li= link_to_unless_current 'English', url_for(:locale => 'en')
-    %li= link_to_unless_current 'Kiswahili', url_for(:locale => 'sw')
+  %body
+    #header
+      %h1= link_to_unless_current 'Ujumbe', root_path
+
+    #content
+      = yield
+
+    #footer
+      - if request.get?
+        %ul#locales
+          / FIXME loop through I18n.available_locales -- need a convention for getting language name
+          %li= link_to_unless_current 'English', url_for(:locale => 'en')
+          %li= link_to_unless_current 'Kiswahili', url_for(:locale => 'sw')
