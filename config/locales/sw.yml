@@ -1,4 +1,5 @@
 sw:
+  locale_name: 'Kiswahili'
   sign_up: 'Jiandikishe'
 
   activerecord:

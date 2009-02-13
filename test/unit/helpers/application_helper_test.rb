@@ -72,4 +72,24 @@ class ApplicationHelperTest < ActionView::TestCase
       end
     end
   end
+
+  context 'other_locales' do
+    context 'given the default locale' do
+      setup { I18n.stubs(:locale).returns(I18n.default_locale) }
+
+      should 'return the others' do
+        expected_locales = { :sw => 'Kiswahili' }.with_indifferent_access
+        assert_equal expected_locales, other_locales
+      end
+    end
+
+    context 'given another locale' do
+      setup { I18n.stubs(:locale).returns(:sw) }
+
+      should 'return the others' do
+        expected_locales = { :en => 'English' }.with_indifferent_access
+        assert_equal expected_locales, other_locales
+      end
+    end
+  end
 end

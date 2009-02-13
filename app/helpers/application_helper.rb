@@ -1,5 +1,13 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def other_locales
+    {}.with_indifferent_access.tap do |other_locales|
+      I18n.available_locales.each do |locale|
+        other_locales[locale] = t(:locale_name, :locale => locale)
+      end
+    end.except(I18n.locale)
+  end
+
   class LocalizedFormBuilder < ActionView::Helpers::FormBuilder
     def label(*args)
       options = args.extract_options!
