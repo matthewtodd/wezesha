@@ -10,3 +10,17 @@ en:
     title: 'Sign Out'
 
   welcome: 'Welcome'
+
+  authlogic:
+    error_messages:
+      login_blank: "can't be blank"
+      # login_not_found: does not exist
+      # login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      email_invalid: "should look like an email address"
+      password_blank: "can't be blank"
+      password_invalid: is invalid
+      # not_active: Your account is not active
+      # not_confirmed: Your account is not confirmed
+      # not_approved: Your account is not approved
+      # blank_record: You can not login with a blank record
+      # new_record: You can not login with a new record

@@ -9,6 +9,8 @@ sw:
   sign_out:
     title: 'Kutoka'
 
+  welcome: 'Karibu'
+
 
   activerecord:
     attributes:
@@ -26,7 +28,7 @@ sw:
   authlogic:
     error_messages:
       login_blank: 'haitakiwi kuwa wazi'
-      # login_not_found: does not exist
+      login_not_found: 'haipo'
       # login_invalid: should use only letters, numbers, spaces, and .-_@ please
       email_invalid: 'inatakiwa iwe kama jina@example.com'
       password_blank: 'haitakiwi kuwa wazi'

@@ -2,6 +2,19 @@ body
   background-color: #222
   font-family: sans-serif
 
+=rounded-corner-box
+  border-radius: 1.5em
+  -moz-border-radius: 1.5em
+  -webkit-border-radius: 1.5em
+  margin-bottom: 0.75em
+  padding: 1.5em
+
+=small-rounded-corner-box
+  border-radius: 1em
+  -moz-border-radius: 1em
+  -webkit-border-radius: 1em
+  padding: 1em
+
 #header
   background-color: #222
   color: #eee
@@ -14,12 +27,17 @@ body
       color: #eee
       text-decoration: none
 
-=rounded-corner-box
-  border-radius: 1.5em
-  -moz-border-radius: 1.5em
-  -webkit-border-radius: 1.5em
-  margin-bottom: 0.75em
-  padding: 1.5em
+  #account
+    +small-rounded-corner-box
+    background-color: #333
+    color: #ccc
+    position: absolute
+    top: 1em
+    right: 1em
+
+    a
+      color: #ccc
+      text-decoration: none
 
 #content
   background-color: #666
@@ -60,6 +78,10 @@ body
         font-size: 1.25em
 
       .fieldWithErrors
+        display: inline
+
+    .check_box
+      label
         display: inline
 
     .submit

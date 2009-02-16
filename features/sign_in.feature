@@ -21,7 +21,7 @@ Feature: Sign In
     When I fill in "Email" with "developer@example.com"
     And I fill in "Password" with "not-my-password"
     And I press "Sign In"
-    Then I should see "is not valid"
+    Then I should see "is invalid"
 
   Scenario: Localized Sign In
     Given these accounts
