@@ -12,7 +12,7 @@ Feature: Sign In
     And I fill in "Password" with "my-password"
     And I press "Sign In"
     Then I should see "Welcome"
-
+  
   Scenario: Failed Sign In
     Given these accounts
     | subdomain    | email                 | password    |
@@ -36,5 +36,7 @@ Feature: Sign In
     | subdomain    | email                 | password    |
     | my-subdomain | developer@example.com | my-password |
     And I have not signed in
-    When I go to the account page for my-subdomain
+    And I am on the account page for my-subdomain
     Then I should see "Sign In"
+    
+  Scenario: Sign In Redirect To Originally Requested Page

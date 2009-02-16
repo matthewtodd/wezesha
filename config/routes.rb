@@ -8,6 +8,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options(:conditions => { :subdomain => false }) do |site|
     site.resources :accounts, :only => [:new, :create]
-    site.root :controller => 'pages'
+    site.root :controller => 'pages' # TODO change this to site.resources :pages, :as => ''
   end
 end

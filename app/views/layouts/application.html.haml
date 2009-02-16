@@ -9,7 +9,12 @@
     #header
       %h1= link_to_unless_current 'Ujumbe', root_path
 
+
     #content
+      #flash
+        - flash.each do |key, message|
+          %div{:class => key}= message
+
       = yield
 
     #footer

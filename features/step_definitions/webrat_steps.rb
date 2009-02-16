@@ -4,8 +4,6 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'support', 'pat
 # http://github.com/brynary/webrat
 
 Given /^I am on the (.+) page$/ do |page_name|
-  # FIXME find the right place to reset the locale between tests.
-  I18n.locale = I18n.default_locale
   visit path_to(page_name)
 end
 

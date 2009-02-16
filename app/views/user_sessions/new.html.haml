@@ -1,5 +1,5 @@
 - form_for @user_session, :url => user_session_path do |form|
-  %h2= t(:sign_in)
+  %h2= t('sign_in.title')
 
   .field
     = form.label :email, :append_text => form.error_message_on(:email)
@@ -9,5 +9,9 @@
     = form.label :password, :append_text => form.error_message_on(:password)
     = form.password_field :password
 
+  .field
+    = form.label :remember_me
+    = form.check_box :remember_me
+
   .submit
-    = form.submit t(:sign_in)
+    = form.submit t('sign_in.title')

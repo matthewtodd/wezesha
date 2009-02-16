@@ -6,11 +6,40 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_locale
+  before_filter :load_account, :if => :current_subdomain
+  helper_method :current_user
+
+  protected
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.user
+  end
+
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = @account.user_sessions.find
+  end
 
   private
+
+  def load_account
+    @account = Account.find_by_subdomain!(current_subdomain)
+  end
+
+  # def user_login_prohibited
+  #
+  # end
+
+  def user_sign_in_required
+    unless current_user
+      flash[:error] = t('sign_in.required')
+      redirect_to new_user_session_path
+    end
+  end
 
   def set_locale
     I18n.locale = params[:locale] if params[:locale]

@@ -6,3 +6,7 @@ Given /^these accounts$/ do |accounts_table|
     end.save!
   end
 end
+
+Given /^I have not signed in$/ do
+  # noop?
+end

@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
-  before_filter :build_account, :only => [:new, :create]
-  before_filter :load_account, :only => [:show, :edit, :update, :destroy]
+  before_filter :build_account,         :only => [:new, :create]
+  before_filter :user_sign_in_required, :except => [:new, :create]
 
   def create
     if @account.save
@@ -14,9 +14,5 @@ class AccountsController < ApplicationController
 
   def build_account
     @account = Account.new(params[:account])
-  end
-
-  def load_account
-    @account = Account.find_by_subdomain!(current_subdomain)
   end
 end

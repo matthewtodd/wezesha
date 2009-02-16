@@ -1,7 +1,11 @@
 sw:
   locale_name: 'Kiswahili'
   sign_up: 'Jiandikishe'
-  sign_in: 'Kuingia'
+
+  sign_in:
+    title: 'Kuingia'
+    required: 'Tafadhali ingia kwanza.'
+
 
   activerecord:
     attributes:
@@ -14,6 +18,7 @@ sw:
       user_session:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
+        remember_me: 'Nikumbuke'
 
   authlogic:
     error_messages:

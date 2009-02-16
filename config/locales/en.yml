@@ -1,5 +1,9 @@
 en:
   locale_name: 'English'
   sign_up: 'Sign Up'
-  sign_in: 'Sign In'
+
+  sign_in:
+    title: 'Sign In'
+    required: 'Please sign in first.'
+
   welcome: 'Welcome'
