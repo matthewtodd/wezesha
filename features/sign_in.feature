@@ -5,9 +5,9 @@ Feature: Sign In
   
   Scenario: Successful Sign In
     Given these accounts
-    | subdomain    | email                 | password    |
-    | my-subdomain | developer@example.com | my-password |
-    And I am on the sign in page for my-subdomain
+    | subdomain   | email                 | password    |
+    | mysubdomain | developer@example.com | my-password |
+    And I am on the sign in page for mysubdomain
     When I fill in "Email" with "developer@example.com"
     And I fill in "Password" with "my-password"
     And I press "Sign In"
@@ -15,9 +15,9 @@ Feature: Sign In
   
   Scenario: Failed Sign In
     Given these accounts
-    | subdomain    | email                 | password    |
-    | my-subdomain | developer@example.com | my-password |
-    And I am on the sign in page for my-subdomain
+    | subdomain   | email                 | password    |
+    | mysubdomain | developer@example.com | my-password |
+    And I am on the sign in page for mysubdomain
     When I fill in "Email" with "developer@example.com"
     And I fill in "Password" with "not-my-password"
     And I press "Sign In"
@@ -25,18 +25,18 @@ Feature: Sign In
 
   Scenario: Localized Sign In
     Given these accounts
-    | subdomain    | email                 | password    |
-    | my-subdomain | developer@example.com | my-password |
-    And I am on the sign in page for my-subdomain
+    | subdomain   | email                 | password    |
+    | mysubdomain | developer@example.com | my-password |
+    And I am on the sign in page for mysubdomain
     When I follow "Kiswahili"
     Then I should not see "translation missing"
     
   Scenario: Sign In Required
     Given these accounts
-    | subdomain    | email                 | password    |
-    | my-subdomain | developer@example.com | my-password |
+    | subdomain   | email                 | password    |
+    | mysubdomain | developer@example.com | my-password |
     And I have not signed in
-    And I am on the account page for my-subdomain
+    And I am on the account page for mysubdomain
     Then I should see "Sign In"
     
   Scenario: Sign In Redirect To Originally Requested Page

@@ -25,6 +25,13 @@ sw:
         password: 'Neno au namba ya siri'
         remember_me: 'Nikumbuke'
 
+    errors:
+      models:
+        account:
+          attributes:
+            subdomain:
+              invalid: "inatakiwa herufi ndogo tu"
+
   authlogic:
     error_messages:
       login_blank: 'haitakiwi kuwa wazi'

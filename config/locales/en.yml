@@ -11,6 +11,14 @@ en:
 
   welcome: 'Welcome'
 
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            subdomain:
+              invalid: "may only contain lowercase letters"
+
   authlogic:
     error_messages:
       login_blank: "can't be blank"
