@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
-  before_filter :load_account
-  before_filter :build_user_session, :only => [:new, :create]
+  before_filter :build_user_session,    :only => [:new, :create]
+  before_filter :user_sign_in_required, :only => [:destroy]
 
   def create
     if @user_session.save
@@ -10,11 +10,12 @@ class UserSessionsController < ApplicationController
     end
   end
 
-  private
-
-  def load_account
-    @account = Account.find_by_subdomain!(current_subdomain)
+  def destroy
+    current_user_session.destroy
+    redirect_to new_user_session_path
   end
+
+  private
 
   def build_user_session
     @user_session = @account.user_sessions.build(params[:user_session])

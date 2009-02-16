@@ -9,6 +9,9 @@
     #header
       %h1= link_to_unless_current 'Ujumbe', root_path
 
+      - if current_user
+        %ul#account
+          %li= link_to t('sign_out.title'), user_session_path, :method => :delete
 
     #content
       #flash

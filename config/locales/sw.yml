@@ -6,6 +6,9 @@ sw:
     title: 'Kuingia'
     required: 'Tafadhali ingia kwanza.'
 
+  sign_out:
+    title: 'Kutoka'
+
 
   activerecord:
     attributes:

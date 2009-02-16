@@ -6,4 +6,7 @@ en:
     title: 'Sign In'
     required: 'Please sign in first.'
 
+  sign_out:
+    title: 'Sign Out'
+
   welcome: 'Welcome'

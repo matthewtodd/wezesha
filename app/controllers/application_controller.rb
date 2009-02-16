@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
-    @current_user_session = @account.user_sessions.find
+    @current_user_session = defined?(@account) && @account && @account.user_sessions.find
   end
 
   private
