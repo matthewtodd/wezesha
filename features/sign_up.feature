@@ -12,6 +12,7 @@ Feature: Sign Up
     And I fill in "Password Confirmation" with "secret"
     And I press "Sign Up"
     Then I should see "Sign In"
+    And I should see "developer@example.com"
 
   Scenario: Failed Sign Up
     Given I am on the sign up page

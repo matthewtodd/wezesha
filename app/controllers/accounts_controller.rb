@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
 
   def create
     if @account.save
-      redirect_to new_user_session_path(:subdomain => @account.subdomain)
+      redirect_to new_user_session_path(:subdomain => @account.subdomain, :user_session => { :email => @account.users.first.email })
     else
       render :new
     end
