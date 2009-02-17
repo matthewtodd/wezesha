@@ -10,7 +10,7 @@ end
 class Mobile
   def self.make_verified(attributes = {})
     make(attributes).tap do |mobile|
-      mobile.update_attributes(:verification_token => mobile.token)
+      mobile.update_attribute(:verified_at, Time.now)
     end
   end
 end
