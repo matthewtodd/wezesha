@@ -7,3 +7,7 @@ end
 Given /^I have configured my phone number$/ do
   @current_user.mobile = Mobile.make_verified
 end
+
+Then /^I should receive "(.+)" on my phone$/ do |message|
+  assert_contains MessageGateway.messages, :message => message, :recipient => @current_user.mobile.number
+end
