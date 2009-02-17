@@ -1,6 +1,6 @@
 Feature: Sign Up
   In order to begin using the system
-  as a developer
+  As a developer
   I want to sign up for an account
   
   Scenario: Successful Sign Up

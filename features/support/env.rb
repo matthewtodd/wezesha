@@ -14,3 +14,14 @@ end
 # Comment out the next two lines if you're not using RSpec's matchers (should / should_not) in your steps.
 # require 'cucumber/rails/rspec'
 # require 'webrat/rspec-rails'
+
+# Seed the Database
+Fixtures.reset_cache
+fixtures_folder = File.join(RAILS_ROOT, 'features', 'support', 'fixtures')
+fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.yml') }
+Fixtures.create_fixtures(fixtures_folder, fixtures)
+
+# Reset to the default locale before each Scenario
+Before do
+  I18n.locale = I18n.default_locale
+end
