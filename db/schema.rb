@@ -9,10 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090211073111) do
+ActiveRecord::Schema.define(:version => 20090217072535) do
 
   create_table "accounts", :force => true do |t|
     t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mobiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "number"
+    t.string   "token"
+    t.datetime "verified_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
