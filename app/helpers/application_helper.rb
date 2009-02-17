@@ -5,11 +5,9 @@ module ApplicationHelper
   end
 
   def other_locales
-    {}.with_indifferent_access.tap do |other_locales|
-      I18n.available_locales.each do |locale|
-        other_locales[locale] = t(:locale_name, :locale => locale)
-      end
-    end.except(I18n.locale)
+    other_locales = {}.with_indifferent_access
+    I18n.available_locales.each { |locale| other_locales[locale] = t(:locale_name, :locale => locale) }
+    other_locales.except(I18n.locale)
   end
 
   class LocalizedFormBuilder < ActionView::Helpers::FormBuilder

@@ -1,3 +1,4 @@
+# TODO remove this if Shoulda ever starts to provide it
 module MatthewTodd
   module Shoulda
     module ActiveRecord

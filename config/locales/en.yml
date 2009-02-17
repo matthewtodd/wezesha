@@ -11,6 +11,10 @@ en:
 
   welcome: 'Welcome'
 
+  new_message:
+    title: 'New Message'
+    submit: 'Send'
+
   activerecord:
     errors:
       models:
