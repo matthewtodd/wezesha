@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
 
   def create
     if @message.save
-      redirect_to account_path
+      respond_to do |format|
+        format.html { redirect_to account_path }
+        format.xml  { render :xml => @message, :status => :created, :location => message_path(@message, :format => :xml) }
+      end
     else
       render :new
     end

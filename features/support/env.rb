@@ -22,7 +22,10 @@ fixtures_folder = File.join(RAILS_ROOT, 'features', 'support', 'fixtures')
 fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.yml') }
 Fixtures.create_fixtures(fixtures_folder, fixtures)
 
-# Reset to the default locale before each Scenario
 Before do
+  # Forget any messages from previous Scenarios
+  MessageGateway.messages.clear
+
+  # Reset to the default locale before each Scenario
   I18n.locale = I18n.default_locale
 end

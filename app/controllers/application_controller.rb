@@ -36,8 +36,10 @@ class ApplicationController < ActionController::Base
 
   def user_sign_in_required
     unless current_user
-      flash[:error] = t('sign_in.required')
-      redirect_to new_user_session_path
+      respond_to do |format|
+        format.html { flash[:error] = t('sign_in.required'); redirect_to new_user_session_path } # FIXME is it possible to set the flash and redirect together?
+        format.any  { render :nothing => true, :status => :unauthorized }
+      end
     end
   end
 

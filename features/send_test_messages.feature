@@ -3,7 +3,7 @@ Feature: Test Messages
   As a developer
   I want to send a test message to my phone
 
-  Scenario: Through the Web UI
+  Scenario: Web UI
     Given I am signed in to acme as developer@acme.example.com
     And I have configured my phone number
     And I am on the account page for acme
@@ -19,3 +19,22 @@ Feature: Test Messages
     When I follow "New Message"
     And I follow "Kiswahili"
     Then I should not see "translation missing"
+  
+  Scenario: API
+    Given I have configured my phone number
+    When I use the API to create a message with text "Hi, I'm testing out the Active Resource API."
+    Then I should receive a Created status
+    And I should receive "Hi, I'm testing out the Active Resource API." on my phone
+
+  Scenario: API Authentication Required
+    Given I have configured my phone number
+    When I use the API without my credentials to create a message with text "Hi, I'm testing out the Active Resource API."
+    Then I should receive an Unauthorized error
+    And I should not receive "Hi, I'm testing out the Active Resource API." on my phone
+
+  Scenario: API Invalid
+    Given I have configured my phone number
+    When I use the API to create a message with text ""
+    Then I should receive an Unprocessable Entity error
+    And I should not receive "Hi, I'm testing out the Active Resource API." on my phone
+
