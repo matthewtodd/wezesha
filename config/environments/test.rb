@@ -36,3 +36,7 @@ config.gem 'thoughtbot-shoulda', :lib => 'shoulda', :source => 'http://gems.gith
 config.after_initialize do
   SubdomainFu.tld_size = 1
 end
+
+config.to_prepare do
+  MessageGateway.implementation = MessageGateway::Test
+end

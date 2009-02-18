@@ -25,3 +25,7 @@ config.action_controller.perform_caching             = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.to_prepare do
+  MessageGateway.implementation = MessageGateway::StandardOut
+end
