@@ -37,4 +37,3 @@ Feature: Test Messages
     When I use the API to create a message with text ""
     Then I should receive an Unprocessable Entity error
     And I should not receive "Hi, I'm testing out the Active Resource API." on my phone
-

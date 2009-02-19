@@ -9,7 +9,10 @@ class MessagesController < ApplicationController
         format.xml  { render :xml => @message, :status => :created, :location => message_path(@message, :format => :xml) }
       end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

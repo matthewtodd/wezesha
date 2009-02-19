@@ -1,7 +1,16 @@
+The Web-to-SMS Gateway that we wanted.
+
+== Next Up:
+* API authentication using a token instead of username / password? (--> configure authlogic)
+* API client project
+* BUG validation: text is too long if ""
+
 == Technical
-* ActiveResource-accessible
+* sign up with invitation code
+* sandbox for free testing
+* admin namespace for us: with API, mac client. :)
+* send text messages asynchronously
 * open-sourced on GitHub, along with ActiveResource-based client library
-* subdomains for accounts: joachim.ujumbe.co.tz
 * web interface to:
   * manage API keys
   * buy credit
