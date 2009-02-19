@@ -2,8 +2,6 @@ The Web-to-SMS Gateway that we wanted.
 
 == Next Up:
 * API authentication using a token instead of username / password? (--> configure authlogic)
-* API client project
-* BUG validation: text is too long if ""
 
 == Technical
 * sign up with invitation code
