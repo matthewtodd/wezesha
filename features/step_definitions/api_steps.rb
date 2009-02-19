@@ -1,5 +1,5 @@
 def http_basic_authentication_credentials(user = current_user)
-  ActionController::HttpAuthentication::Basic.encode_credentials(user.email, 'secret')
+  ActionController::HttpAuthentication::Basic.encode_credentials(user.single_access_token, 'X')
 end
 
 When /^I use the API (without my credentials )?to create a message with text "(.*)"$/ do |unauthorized, text|
