@@ -2,6 +2,10 @@ def current_user
   @current_user ||= User.first
 end
 
+def my_phone_number
+  current_user.mobile.number
+end
+
 Given /^I am signed in to (.+) as (.+)$/ do |subdomain, email|
   account = Account.find_by_subdomain!(subdomain)
   @current_user = account.users.find_by_email!(email)

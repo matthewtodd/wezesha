@@ -3,6 +3,7 @@ The Web-to-SMS Gateway that we wanted.
 == Next Up:
 * show user his api token
 * start thinking about billing, so we can send messages to other phone numbers
+* enter your mobile number
 * invitation codes?
 
 == Technical

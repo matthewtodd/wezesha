@@ -2,6 +2,10 @@
   %h2= t('new_message.title')
 
   .field
+    = form.label :recipient, :append_text => form.error_message_on(:recipient)
+    = form.text_field(:recipient)
+
+  .field
     = form.label :text, :append_text => form.error_message_on(:text)
     = form.text_area(:text)
 

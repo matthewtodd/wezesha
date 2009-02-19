@@ -20,6 +20,7 @@ sw:
       account:
         subdomain: 'Subdomain'
       message:
+        recipient: 'Mpokeaji'
         text: 'Ujumbe'
       user:
         email: 'Anuani ya barua pepe'

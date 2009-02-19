@@ -4,6 +4,7 @@ require 'faker'
 Sham.mobile_number { Faker.numerify('2557########') }
 
 Message.blueprint do
+  recipient { Sham.mobile_number }
   text { Faker::Lorem.sentence }
 end
 
