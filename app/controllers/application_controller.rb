@@ -24,26 +24,30 @@ class ApplicationController < ActionController::Base
     @current_user_session = defined?(@account) && @account && @account.user_sessions.find
   end
 
+  def redirect_back_or_to(location)
+    redirect_to session.delete(:return_to) || location
+  end
+
   private
 
   def load_account
     @account = Account.find_by_subdomain!(current_subdomain)
   end
 
-  # def user_login_prohibited
-  #
-  # end
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale]
+  end
+
+  def store_location
+    session[:return_to] = request.request_uri
+  end
 
   def user_sign_in_required
     unless current_user
       respond_to do |format|
-        format.html { flash[:error] = t('sign_in.required'); redirect_to new_user_session_path } # FIXME is it possible to set the flash and redirect together?
+        format.html { store_location; flash[:error] = t('sign_in.required'); redirect_to new_user_session_path } # FIXME is it possible to set the flash and redirect together?
         format.any  { render :nothing => true, :status => :unauthorized }
       end
     end
-  end
-
-  def set_locale
-    I18n.locale = params[:locale] if params[:locale]
   end
 end

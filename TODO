@@ -1,7 +1,9 @@
 The Web-to-SMS Gateway that we wanted.
 
 == Next Up:
-* API authentication using a token instead of username / password? (--> configure authlogic)
+* show user his api token
+* start thinking about billing, so we can send messages to other phone numbers
+* invitation codes?
 
 == Technical
 * sign up with invitation code

@@ -25,5 +25,3 @@ Feature: Sign In
   Scenario: Sign In Required
     Given I am on the account page for acme
     Then I should see "Sign In"
-    
-  Scenario: Sign In Redirect To Originally Requested Page
