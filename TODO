@@ -1,22 +1,7 @@
 The Web-to-SMS Gateway that we wanted.
 
-== Next Up:
-* show user his api token
-* start thinking about billing, so we can send messages to other phone numbers
-* enter your mobile number
-* invitation codes?
-
 == Technical
-* sign up with invitation code
 * sandbox for free testing
-* admin namespace for us: with API, mac client. :)
-* send text messages asynchronously
-* open-sourced on GitHub, along with ActiveResource-based client library
-* web interface to:
-  * manage API keys
-  * buy credit
-  * view history
-* unlimited messages to one phone number? (very useful for developing) (idea needs to be adjusted to prevent / deal with abuse)
 
 == Business Relationships
 * talk with Vodacom

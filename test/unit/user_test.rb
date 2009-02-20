@@ -5,6 +5,5 @@ class UserTest < ActiveSupport::TestCase
 
   should_be_authentic
   should_belong_to :account
-  should_have_one :mobile
   should_have_many :messages
 end

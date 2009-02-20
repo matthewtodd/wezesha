@@ -9,4 +9,10 @@ class Account < ActiveRecord::Base
   has_many :users
   accepts_nested_attributes_for :users
   authenticates_many :user_sessions
+
+  has_many :entries
+
+  def balance
+    entries.sum(:amount)
+  end
 end

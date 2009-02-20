@@ -13,6 +13,9 @@ def path_to(page_name, options = {})
   when /^account$/i
     account_path(options)
 
+  when /^new message$/i
+    new_message_path(options)
+
   else
     raise "Can't find mapping from \"#{page_name}\" to a path."
   end

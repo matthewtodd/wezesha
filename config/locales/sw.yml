@@ -40,7 +40,7 @@ sw:
         message:
           attributes:
             text:
-               # FIXME can we customize messages by noun class?
+              # FIXME can we customize messages by noun class?
               empty: "hautakiwi kuwa wazi"
               blank: "hautakiwi kuwa wazi"
               too_long: "ni mrefu sana (usizidi herufi {{count}})"

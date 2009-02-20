@@ -3,6 +3,5 @@ class User < ActiveRecord::Base
 
   acts_as_authentic :scope => :account_id
   belongs_to :account
-  has_one :mobile
   has_many :messages
 end
