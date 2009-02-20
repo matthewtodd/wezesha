@@ -19,13 +19,13 @@ class AccountTest < ActiveSupport::TestCase
     setup { @account = Account.make }
 
     should 'be 0 by default' do
-      assert_equal 0, @account.balance
+      assert_equal Money.new(0), @account.balance
     end
 
     should 'be the sum of the entries' do
-      @account.entries.create(:amount => 4)
-      @account.entries.create(:amount => 6)
-      assert_equal 10, @account.balance
+      @account.entries.create(:amount => Money.new(400))
+      @account.entries.create(:amount => Money.new(600))
+      assert_equal Money.new(1000), @account.balance
     end
   end
 end

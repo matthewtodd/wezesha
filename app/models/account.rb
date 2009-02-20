@@ -13,6 +13,6 @@ class Account < ActiveRecord::Base
   has_many :entries
 
   def balance
-    entries.sum(:amount)
+    Money.new(entries.sum(:amount))
   end
 end
