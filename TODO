@@ -16,3 +16,16 @@ The Web-to-SMS Gateway that we wanted.
 == Networking
 * Richard Manyanza
 * Eric Hersman (White African)
+
+
+
+=== Technical Backlog
+* Unit test for missing translation keys instead of having Cucumber click to translate every page.
+    This is a little hard, since we have a few different sources:
+      DONE. 1. Any key in the en.yml file should be present in sw.yml.
+      2. Any ActiveRecord attributes should be translated. (But what about timestamps?)
+      3. Any Authlogic message should be translated.
+      4. Any Rails message from rails-i18n should be translated.
+
+* Fix Ruby.tmbundle so that it can understand filenames filtered with Rails 2.3.0's BacktraceCleaner.
+* Find a good way to deal with noun classes in Swahili translations.
