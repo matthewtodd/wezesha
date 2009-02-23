@@ -16,6 +16,9 @@ def path_to(page_name, options = {})
   when /^new message$/i
     new_message_path(options)
 
+  when /^new payment$/i
+    new_payment_path(options)
+
   else
     raise "Can't find mapping from \"#{page_name}\" to a path."
   end

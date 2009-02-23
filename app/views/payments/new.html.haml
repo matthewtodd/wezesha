@@ -1,0 +1,8 @@
+- form_for @payment do |form|
+  %h2= t('new_payment.title')
+
+  .hidden
+    = form.hidden_field :cents, :value => 1000
+
+  .submit
+    = form.submit t('new_payment.submit')

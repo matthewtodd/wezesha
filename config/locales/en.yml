@@ -15,6 +15,10 @@ en:
     title: 'New Message'
     submit: 'Send'
 
+  new_payment:
+    title: 'New Payment'
+    submit: 'Buy Credit'
+
   activerecord:
     errors:
       models:

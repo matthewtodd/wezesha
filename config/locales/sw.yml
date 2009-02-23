@@ -15,6 +15,11 @@ sw:
     title: 'Ujumbe Mpya'
     submit: 'Tuma'
 
+  new_payment:
+    title: 'Malipo Mapya'
+    submit: 'Nunua Muda'
+
+
   activerecord:
     attributes:
       account:

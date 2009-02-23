@@ -21,3 +21,8 @@ Message.blueprint do
   recipient { Sham.mobile_number }
   text { Faker::Lorem.sentence }
 end
+
+Payment.blueprint do
+  user
+  amount { Money.dollars(5) }
+end

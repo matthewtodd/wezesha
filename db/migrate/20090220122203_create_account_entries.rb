@@ -4,7 +4,7 @@ class CreateAccountEntries < ActiveRecord::Migration
       t.references :account
       t.references :source, :polymorphic => true
 
-      t.integer :amount
+      t.integer :cents
 
       t.timestamps
     end

@@ -13,7 +13,7 @@ class Account < ActiveRecord::Base
   has_many :entries
 
   def balance
-    Money.new(entries.sum(:amount))
+    Money.cents(entries.sum(:cents))
   end
 
   def charge_for(message)
