@@ -1,11 +1,15 @@
 The Web-to-SMS Gateway that we wanted.
 
 == Deploy
-* set up a paypal account to receive payments -- mine?
-* encrypt parameters sent to paypal
-* where to host?
-* invitation codes
-* arrange for wezesha.co.tz
+* internal
+  * receive and handle paypal notification
+  * encrypt parameters sent to paypal
+  * invitation codes
+* external
+  * arrange for wezesha.co.tz
+  * set up a paypal account to receive payments -- mine?
+  * where to host?
+  * push code to github
 
 == Technical
 * sandbox for free testing
