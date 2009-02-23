@@ -1,4 +1,4 @@
-set :application, 'ujumbe'
+set :application, 'wezesha'
 set :user,        'mtodd'
 set :deploy_to,   "/var/www/#{application}"
 

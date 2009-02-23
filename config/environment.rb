@@ -23,7 +23,7 @@ Rails::Initializer.run do |config|
 
   config.after_initialize do
     ActionController::Base.session = {
-      :key    => '_ujumbe_session',
+      :key    => '_wezesha_session',
       :secret => Application[:secret]
     }
 
