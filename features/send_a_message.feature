@@ -14,6 +14,7 @@ Feature: Send a Message
     Then the message "Hi, I'm testing out the system." should be delivered to some phone number
     And the acme account should have less than 2 dollars in it
 
+  # FIXME move translation tests to some unit test somewhere
   Scenario: Web UI Localization
     Given I am signed in to acme as developer@acme.example.com
     And I am on the new message page for acme

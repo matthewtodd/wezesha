@@ -13,6 +13,8 @@ ActiveRecord::Schema.define(:version => 20090220122203) do
 
   create_table "account_entries", :force => true do |t|
     t.integer  "account_id"
+    t.integer  "source_id"
+    t.string   "source_type"
     t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"

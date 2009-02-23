@@ -15,4 +15,8 @@ class Account < ActiveRecord::Base
   def balance
     Money.new(entries.sum(:amount))
   end
+
+  def charge_for(message)
+    entries.create(:source => message, :amount => message.cost.negated)
+  end
 end

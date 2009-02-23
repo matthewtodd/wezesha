@@ -2,6 +2,7 @@ class CreateAccountEntries < ActiveRecord::Migration
   def self.up
     create_table :account_entries do |t|
       t.references :account
+      t.references :source, :polymorphic => true
 
       t.integer :amount
 
