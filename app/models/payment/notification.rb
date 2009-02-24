@@ -2,7 +2,7 @@ require 'validates_equality_of'
 
 class Payment::Notification < ActiveRecord::Base
   belongs_to  :payment
-  delegate    :amount, :to => :payment, :prefix => true
+  delegate    :account, :amount, :to => :payment, :prefix => true
 
   composed_of :notification, :class_name => 'ActiveMerchant::Billing::Integrations::Paypal::Notification', :mapping => %w(notification raw)
   delegate    :account, :amount, :complete?, :currency, :to => :notification, :prefix => true
@@ -17,7 +17,14 @@ class Payment::Notification < ActiveRecord::Base
   # Make sure we don't record completed transactions twice.
   validates_uniqueness_of :status, :if => :notification_complete?
 
+  # Credit the user's account.
+  after_create :credit_account, :if => :notification_complete?
+
   private
+
+  def credit_account
+    payment_account.credit_for(self)
+  end
 
   def set_status
     self.status = self.notification.status

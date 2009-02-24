@@ -57,7 +57,6 @@ class Payment::NotificationTest < ActiveSupport::TestCase
       end
     end
 
-    # FIXME should allow multiple Pending statuses
     context 'notification_status' do
       should 'not invalidate notification when first set to Completed' do
         notification = from_paypal_notification(:payment_status => 'Completed')
@@ -75,6 +74,30 @@ class Payment::NotificationTest < ActiveSupport::TestCase
       should 'invalidate notification if a Completed notification has already been received' do
         from_paypal_notification(:payment_status => 'Completed').save!
         assert !from_paypal_notification(:payment_status => 'Completed').valid?
+      end
+    end
+
+    context 'with status Pending' do
+      setup { @notification = from_paypal_notification(:payment_status => 'Pending') }
+
+      context 'creating the notification' do
+        setup { @notification.save! }
+
+        before_should 'not credit payment_account with self' do
+          @notification.payment_account.expects(:credit_for).with(@notification).never
+        end
+      end
+    end
+
+    context 'with status Completed' do
+      setup { @notification = from_paypal_notification(:payment_status => 'Completed') }
+
+      context 'creating the notification' do
+        setup { @notification.save! }
+
+        before_should 'credit payment_account with self' do
+          @notification.payment_account.expects(:credit_for).with(@notification).once
+        end
       end
     end
   end

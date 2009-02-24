@@ -8,7 +8,7 @@ class Message < ActiveRecord::Base
   belongs_to :user
   delegate :account, :to => :user
 
-  after_create :deliver, :charge
+  after_create :deliver, :charge_account
 
   def cost
     Money.new(5)
@@ -16,7 +16,7 @@ class Message < ActiveRecord::Base
 
   private
 
-  def charge
+  def charge_account
     account.charge_for(self)
   end
 

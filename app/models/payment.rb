@@ -1,7 +1,9 @@
 class Payment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to  :user
   composed_of :amount, :class_name => 'Money', :mapping => %w(cents cents)
+  delegate :account, :to => :user
   has_many :notifications
+
   validates_numericality_of :cents, :only_integer => true, :greater_than => 0
 
   def paypal_url(notify_url = nil)

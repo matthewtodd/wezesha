@@ -10,6 +10,8 @@ class Account < ActiveRecord::Base
   accepts_nested_attributes_for :users
   authenticates_many :user_sessions
 
+  has_many :payments, :through => :users
+
   has_many :entries
 
   def balance
@@ -18,5 +20,9 @@ class Account < ActiveRecord::Base
 
   def charge_for(message)
     entries.create(:source => message, :amount => message.cost.negated)
+  end
+
+  def credit_for(payment_notification)
+    entries.create(:source => payment_notification, :amount => payment_notification.payment_amount)
   end
 end
