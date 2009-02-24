@@ -1,13 +1,23 @@
 The Web-to-SMS Gateway that we wanted.
 
-== Deploy
-* internal
-  * receive and handle paypal notification
-  * encrypt parameters sent to paypal
+* domain name registration
+  * email configuration
+    * hoptoad
+    * paypal
+      * set up account for payments@wezesha.co.tz
+      * encrypt all traffic
+
+* announceit beta acceptance
   * invitation codes
-  * hoptoad
-* external
-  * set up a paypal account to receive payments -- mine?
+
+* translations
+
+* sending email messages
+  * account created
+  * forgot password
+  * payment received
+
+* vcalendar, vcard
 
 == Technical
 * sandbox for free testing
