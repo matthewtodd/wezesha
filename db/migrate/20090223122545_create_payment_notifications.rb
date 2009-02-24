@@ -3,7 +3,8 @@ class CreatePaymentNotifications < ActiveRecord::Migration
     create_table :payment_notifications do |t|
       t.references :payment
 
-      t.text :paypal_notification
+      t.text :notification
+      t.string :status
 
       t.timestamps
     end

@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(:version => 20090223122545) do
 
   create_table "payment_notifications", :force => true do |t|
     t.integer  "payment_id"
-    t.text     "paypal_notification"
+    t.text     "notification"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

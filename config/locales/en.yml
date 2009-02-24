@@ -21,6 +21,9 @@ en:
 
   activerecord:
     errors:
+      messages:
+        equality: "must equal {{expected_value}}"
+
       models:
         account:
           attributes:

@@ -37,6 +37,9 @@ sw:
         remember_me: 'Nikumbuke'
 
     errors:
+      messages:
+        equality: "inatakiwa iwe {{expected_value}}"
+
       models:
         account:
           attributes:
