@@ -5,6 +5,7 @@ The Web-to-SMS Gateway that we wanted.
   * receive and handle paypal notification
   * encrypt parameters sent to paypal
   * invitation codes
+  * hoptoad
 * external
   * arrange for wezesha.co.tz
   * set up a paypal account to receive payments -- mine?

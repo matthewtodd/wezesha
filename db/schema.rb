@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090223092758) do
+ActiveRecord::Schema.define(:version => 20090223122545) do
 
   create_table "account_entries", :force => true do |t|
     t.integer  "account_id"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20090223092758) do
     t.integer  "user_id"
     t.string   "recipient"
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payment_notifications", :force => true do |t|
+    t.integer  "payment_id"
+    t.text     "paypal_notification"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

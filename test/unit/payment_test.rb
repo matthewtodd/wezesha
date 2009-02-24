@@ -12,12 +12,12 @@ class PaymentTest < ActiveSupport::TestCase
     context 'paypal_url parameters' do
       setup do
         query = URI.parse(@payment.paypal_url).query
-        query = query.split('&').map { |pair| pair.split('=', 2) }.flatten.map { |value| URI.decode(value) }
+        query = query.split('&').map { |pair| pair.split('=', 2) }.flatten.map { |value| URI.unescape(value) }
         @parameters = Hash[*query].with_indifferent_access
       end
 
       should 'use business from application configuration' do
-        assert_equal Application[:paypal][:account], @parameters[:business]
+        assert_equal Application[:paypal_account], @parameters[:business]
       end
 
       should 'use amount from payment' do

@@ -8,6 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
+  config.gem 'activemerchant', :lib => 'active_merchant'
   config.gem 'authlogic'
   config.gem 'haml'
   config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
@@ -21,12 +22,9 @@ Rails::Initializer.run do |config|
 
   config.i18n.load_path << Rails.root.join('vendor', 'rails-i18n', 'rails', 'locale', 'sw.yml')
 
-  config.after_initialize do
-    ActionController::Base.session = {
-      :key    => '_wezesha_session',
-      :secret => Application[:secret]
-    }
+  config.action_controller.session = { :key => '_wezesha_session', :secret => File.read(Rails.root.join('config', 'secret.txt')).strip }
 
+  config.after_initialize do
     ActionView::Base.default_form_builder = ApplicationHelper::LocalizedFormBuilder
   end
 end

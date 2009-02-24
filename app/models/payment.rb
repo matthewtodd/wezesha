@@ -1,10 +1,11 @@
 class Payment < ActiveRecord::Base
   belongs_to :user
   composed_of :amount, :class_name => 'Money', :mapping => %w(cents cents)
+  has_many :notifications
   validates_numericality_of :cents, :only_integer => true, :greater_than => 0
 
   def paypal_url(notify_url = nil)
-    Application[:paypal][:url] + '?' + paypal_parameters.merge(:notify_url => notify_url).to_query
+    Application[:paypal_url] + '?' + paypal_parameters.merge(:notify_url => notify_url).to_query
   end
 
   private
@@ -12,7 +13,7 @@ class Payment < ActiveRecord::Base
   def paypal_parameters
     {
       :amount => self.amount.dollars,
-      :business => Application[:paypal][:account],
+      :business => Application[:paypal_account],
       :cmd => '_xclick',
       :currency_code => 'USD',
       :item_name => I18n.t(:payment_item_name),

@@ -12,7 +12,12 @@ Given /^the (.+) account has (\d+) dollars in it$/ do |subdomain, amount|
   current_account.entries.create(:amount => Money.dollars(amount.to_i))
 end
 
-Given /^the (.+) account should have less than (\d+) dollars in it$/ do |subdomain, amount|
+Then /^the (.+) account should have (\d+) dollars in it$/ do |subdomain, amount|
+  load_account(subdomain)
+  assert_equal Money.dollars(amount.to_i), current_account.balance
+end
+
+Then /^the (.+) account should have less than (\d+) dollars in it$/ do |subdomain, amount|
   load_account(subdomain)
   assert current_account.balance < Money.dollars(amount.to_i)
 end

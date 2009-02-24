@@ -1,5 +1,6 @@
 config/application.yml
 config/database.yml
+config/secret.txt
 db/*.sqlite3*
 doc/guides
 log

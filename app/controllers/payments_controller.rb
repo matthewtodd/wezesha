@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
 
   def create
     if @payment.save
-      redirect_to @payment.paypal_url
+      redirect_to @payment.paypal_url(payment_notifications_url(@payment))
     else
       render :new
     end

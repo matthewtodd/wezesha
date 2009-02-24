@@ -26,3 +26,7 @@ Payment.blueprint do
   user
   amount { Money.dollars(5) }
 end
+
+Payment::Notification.blueprint do
+  payment
+end

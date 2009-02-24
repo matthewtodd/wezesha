@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options(:conditions => { :subdomain => true }) do |account|
     account.resources :messages, :only => [:new, :create, :show]
-    account.resources :payments, :only => [:new, :create]
+    account.resources :payments, :only => [:new, :create], :has_many => :notifications
     account.resource :user_session, :as => 'session'
     account.resource :account, :only => [:show, :edit, :update, :destroy], :as => ''
   end
