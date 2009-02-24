@@ -7,10 +7,7 @@ The Web-to-SMS Gateway that we wanted.
   * invitation codes
   * hoptoad
 * external
-  * arrange for wezesha.co.tz
   * set up a paypal account to receive payments -- mine?
-  * where to host?
-  * push code to github
 
 == Technical
 * sandbox for free testing
