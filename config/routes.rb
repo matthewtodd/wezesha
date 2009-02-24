@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.filter :locale
 
   map.with_options(:conditions => { :subdomain => true }) do |account|
-    account.resources :messages, :only => [:new, :create, :show]
+    account.resources :messages, :vcards, :only => [:new, :create, :show]
 
     account.resources :payments, :only => [:new, :create] do |payment|
       payment.resources :notifications, :only => [:create], :controller => 'payment/notifications'

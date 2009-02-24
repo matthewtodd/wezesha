@@ -18,7 +18,7 @@ module MessageGateway
     SERVICE_URI = URI.parse('http://bulksms.vsms.net:5567/eapi/submission/send_sms/2/2.0')
 
     def deliver(message)
-      Net::HTTP.post_form(SERVICE_URI, Application[:bulk_sms].merge(:msisdn => message.recipient, :message => message.text)).tap do |response|
+      Net::HTTP.post_form(SERVICE_URI, :username => Application[:bulk_sms_username], :password => Application[:bulk_sms_password], :msisdn => message.recipient, :message => message.text, :dca => (message.binary? ? '8bit' : '7bit')).tap do |response|
         puts "BulkSMS response: #{response.body}"
       end
     end
