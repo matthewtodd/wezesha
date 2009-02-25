@@ -1,14 +1,18 @@
 The Web-to-SMS Gateway that we wanted.
 
-* domain name registration
-  * email configuration
+* Private beta
+  * people request an invitation
+  * we send an invitation code
+  * people sign up with an invitation code
+
+* Account balance, recent spending (API)
+
+* WAITING_FOR domain name registration
+  * set up email accounts somewhere, either woodward or google apps
     * hoptoad
     * paypal
       * set up account for payments@wezesha.co.tz
       * encrypt all traffic
-
-* announceit beta acceptance
-  * invitation codes
 
 * translations
 
@@ -17,7 +21,14 @@ The Web-to-SMS Gateway that we wanted.
   * forgot password
   * payment received
 
-* vcalendar, vcard
+* vcalendar
+
+* vcard
+  * features
+  * web ui
+  * COST!!!
+
+
 
 == Technical
 * sandbox for free testing
