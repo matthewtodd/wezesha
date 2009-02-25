@@ -25,11 +25,14 @@ sw:
     submit: 'Jiandikishe'
     thank_you: 'Asante'
 
-
   activerecord:
     attributes:
       account:
         subdomain: 'Subdomain'
+      administrator_session:
+        email: 'Anuani ya barua pepe'
+        password: 'Neno au namba ya siri'
+        remember_me: 'Nikumbuke'
       message:
         recipient: 'Mpokeaji'
         text: 'Ujumbe'

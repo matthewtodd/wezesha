@@ -1,12 +1,17 @@
 def path_to(page_name, options = {})
   case page_name
 
+  # Top-level site
   when /^home$/i
     root_path(options)
 
   when /^sign up$/i
     new_account_path(options)
 
+  when /^administrator sign in$/i
+    new_admin_administrator_session_path(options)
+
+  # Subdomains
   when /^sign in$/i
     new_user_session_path(options)
 

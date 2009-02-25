@@ -1,0 +1,26 @@
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title Wezesha
+    = stylesheet_link_tag 'reset', 'screen', :cache => true
+
+  %body
+    #header
+      %h1= link_to_unless_current 'Wezesha', admin_root_path
+
+      - if current_administrator
+        %ul#account
+          %li= link_to t('sign_out.title'), admin_administrator_session_path, :method => :delete
+
+    #content
+      #flash
+        - flash.each do |key, message|
+          %div{:class => key}= message
+
+      = yield
+
+    #footer
+      %ul#locales
+        - other_locales.each do |locale, locale_name|
+          %li= link_to locale_name, params.merge(:locale => locale), :method => (request.get? ? nil : request.method)

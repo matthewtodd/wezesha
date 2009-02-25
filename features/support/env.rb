@@ -18,7 +18,7 @@ end
 
 # Seed the Database
 Fixtures.reset_cache
-fixtures_folder = File.join(RAILS_ROOT, 'features', 'support', 'fixtures')
+fixtures_folder = Rails.root.join('features', 'support', 'fixtures')
 fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.yml') }
 Fixtures.create_fixtures(fixtures_folder, fixtures)
 
