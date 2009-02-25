@@ -1,9 +1,0 @@
-- form_for(subscription) do |form|
-  %h2= t('new_subscription.title')
-  %p= textilize(t('new_subscription.blurb'))
-
-  .field
-    = form.label :email, :append_text => form.error_message_on(:email)
-    = form.text_field(:email)
-  .submit
-    = form.submit t('new_subscription.submit')

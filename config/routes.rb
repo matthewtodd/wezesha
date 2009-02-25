@@ -25,7 +25,7 @@ ActionController::Routing::Routes.draw do |map|
     end
 
     site.resources :accounts, :only => [:new, :create]
-    site.resources :subscriptions, :only => [:create]
+    site.resources :subscribers, :only => [:create]
     site.root :controller => 'pages'
   end
 end

@@ -19,7 +19,7 @@ en:
     title: 'New Payment'
     submit: 'Buy Credit'
 
-  new_subscription:
+  new_subscriber:
     title: 'Subscribe'
     blurb: 'Find out when we launch--and maybe get a beta invite?'
     submit: 'Subscribe'
