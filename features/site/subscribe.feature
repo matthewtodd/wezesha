@@ -1,7 +1,7 @@
-Feature: Sign Up for Beta Program
-  In order to gain early access to the website
+Feature: Subscribe
+  In order to receive updates about the website and maybe get an invitation
   As a developer
-  I want to request an invitation code
+  I want to subscribe
 
   Scenario: Subscription
     Given I am on the home page
