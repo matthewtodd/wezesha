@@ -19,6 +19,12 @@ sw:
     title: 'Malipo Mapya'
     submit: 'Nunua Muda'
 
+  new_subscription:
+    title: 'Jiandikishe'
+    blurb: 'Fahamu ni lini tunazindua--na unaweza kupata mwaliko wa majaribio.'
+    submit: 'Jiandikishe'
+    thank_you: 'Asante'
+
 
   activerecord:
     attributes:
@@ -27,6 +33,8 @@ sw:
       message:
         recipient: 'Mpokeaji'
         text: 'Ujumbe'
+      subscription:
+        email: 'Anuani ya barua pepe'
       user:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'

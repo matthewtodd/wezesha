@@ -19,6 +19,12 @@ en:
     title: 'New Payment'
     submit: 'Buy Credit'
 
+  new_subscription:
+    title: 'Subscribe'
+    blurb: 'Find out when we launch--and maybe get a beta invite?'
+    submit: 'Subscribe'
+    thank_you: 'Thank You'
+
   activerecord:
     errors:
       messages:

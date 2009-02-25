@@ -5,6 +5,10 @@ Sham.email         { Faker::Internet.email }
 Sham.mobile_number { Faker.numerify('2557########') }
 Sham.subdomain     { Faker::Internet.domain_word }
 
+Subscription.blueprint do
+  email { Sham.email }
+end
+
 Account.blueprint do
   subdomain { Sham.subdomain }
 end

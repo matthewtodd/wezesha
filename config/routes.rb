@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options(:conditions => { :subdomain => false }) do |site|
     site.resources :accounts, :only => [:new, :create]
+    site.resources :subscriptions, :only => [:create]
     site.root :controller => 'pages'
   end
 end

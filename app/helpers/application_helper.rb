@@ -11,6 +11,10 @@ module ApplicationHelper
   end
 
   class LocalizedFormBuilder < ActionView::Helpers::FormBuilder
+    def error_message_on(method, *args)
+      super.tap { |error| error.concat('.') unless error.blank? }
+    end
+
     def label(*args)
       options = args.extract_options!
       method  = args.shift
