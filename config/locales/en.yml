@@ -23,7 +23,7 @@ en:
     title: 'Subscribe'
     blurb: 'Find out when we launch--and maybe get a beta invite?'
     submit: 'Subscribe'
-    thank_you: 'Thank You'
+    thank_you: 'Thank You' # FIXME
 
   activerecord:
     errors:

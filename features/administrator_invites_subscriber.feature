@@ -3,4 +3,4 @@ Feature: Administrator Invites Subscriber
   As an Administrator
   I want to send an Invitation to a Subscriber
 
-  
+  Scenario: New Invitation
