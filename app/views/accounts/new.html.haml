@@ -2,6 +2,9 @@
   %h2= t(:sign_up)
 
   .field
+    = form.label :invitation_code, :append_text => form.error_message_on(:invitation_id)
+    = form.text_field(:invitation_code)
+  .field
     = form.label :subdomain, :append_text => form.error_message_on(:subdomain)
     = form.text_field(:subdomain).concat('.').concat(host_without_subdomain)
 

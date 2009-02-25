@@ -9,7 +9,12 @@ Subscription.blueprint do
   email { Sham.email }
 end
 
+Invitation.blueprint do
+  email { Sham.email }
+end
+
 Account.blueprint do
+  invitation
   subdomain { Sham.subdomain }
 end
 

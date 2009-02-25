@@ -28,6 +28,7 @@ sw:
   activerecord:
     attributes:
       account:
+        invitation_code: 'Mwaliko'
         subdomain: 'Subdomain'
       administrator_session:
         email: 'Anuani ya barua pepe'

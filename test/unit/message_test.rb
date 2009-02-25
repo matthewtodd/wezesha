@@ -24,7 +24,7 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   context 'a new Message' do
-    setup { @message = Message.make_unsaved }
+    setup { @message = Message.make_unsaved(:user => User.make) }
 
     context 'saved' do
       setup { @message.save }
