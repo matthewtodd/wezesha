@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20090225122108) do
   end
 
   create_table "subscribers", :force => true do |t|
+    t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

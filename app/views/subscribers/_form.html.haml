@@ -3,6 +3,9 @@
   %p= textilize(t('new_subscriber.blurb'))
 
   .field
+    = form.label :name, :append_text => form.error_message_on(:name)
+    = form.text_field(:name)
+  .field
     = form.label :email, :append_text => form.error_message_on(:email)
     = form.text_field(:email)
   .submit

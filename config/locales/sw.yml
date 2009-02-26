@@ -37,8 +37,9 @@ sw:
       message:
         recipient: 'Mpokeaji'
         text: 'Ujumbe'
-      subscription:
+      subscriber:
         email: 'Anuani ya barua pepe'
+        name: 'Jina'
       user:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
