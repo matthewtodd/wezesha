@@ -12,7 +12,7 @@ sw:
   welcome: 'Karibu'
 
   new_invitation:
-    submit: 'Alika'
+    submit: 'Mwalike'
 
   invitation:
     one: 'Mwaliko {{count}}'
@@ -31,6 +31,9 @@ sw:
     blurb: 'Fahamu ni lini tutazindua--na unaweza kupata mwaliko wa majaribio.'
     submit: 'Jiandikishe'
     thank_you: 'Asante' # FIXME
+
+  subscriber:
+    destroy: 'Mwondoe'
 
   admin:
     subscribers:

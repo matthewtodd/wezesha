@@ -6,7 +6,7 @@ class SubscriberTest < ActiveSupport::TestCase
   should_allow_values_for :email, 'developer@example.com'
   should_not_allow_values_for :email, 'developer'
 
-  should_have_many :invitations
+  should_have_many :invitations, :dependent => :destroy
 
   context 'an existing Subscriber' do
     setup { @subscriber = Subscriber.make }

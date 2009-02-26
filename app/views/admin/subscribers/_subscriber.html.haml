@@ -7,4 +7,4 @@
   %td.actions
     = t(:invitation, :count => subscriber.invitations.count) unless subscriber.invitations.count.zero?
     = link_to t('new_invitation.submit'), admin_subscriber_invitations_path(subscriber), :class => :invite, :method => :post
-    Unsubscribe
+    = link_to t('subscriber.destroy'), admin_subscriber_path(subscriber), :class => :unsubscribe, :method => :delete

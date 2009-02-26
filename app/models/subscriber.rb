@@ -1,7 +1,7 @@
 class Subscriber < ActiveRecord::Base
   default_scope :order => :created_at
 
-  has_many :invitations, :as => :source do
+  has_many :invitations, :as => :source, :dependent => :destroy do
     def build(attributes = {}, &block)
       super((attributes || {}).symbolize_keys.reverse_merge(:email => proxy_owner.email), &block)
     end

@@ -32,6 +32,9 @@ en:
     submit: 'Subscribe'
     thank_you: 'Thank You' # FIXME
 
+  subscriber:
+    destroy: 'Unsubscribe'
+
   admin:
     subscribers:
       title: Subscribers

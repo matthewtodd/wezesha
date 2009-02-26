@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   # =============================================================================
   map.with_options(:conditions => { :subdomain => false }) do |site|
     site.namespace :admin do |admin|
-      admin.resources :subscribers, :only => [:index] do |subscriber|
+      admin.resources :subscribers, :only => [:index, :destroy] do |subscriber|
         subscriber.resources :invitations, :only => [:create], :controller => 'subscribers/invitations'
       end
 
