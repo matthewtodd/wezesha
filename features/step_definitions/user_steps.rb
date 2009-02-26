@@ -1,9 +1,6 @@
-def current_user
-  @current_user ||= User.first
-end
-
+# FIXME get rid of this?
 def load_user(email)
-  @current_user = current_account.users.find_by_email!(email)
+  @current_user = existing_user(email)
 end
 
 Given /^I am signed in to (.+) as (.+)$/ do |subdomain, email|

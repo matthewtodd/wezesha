@@ -1,6 +1,6 @@
 class Admin::AdministratorSessionsController < Admin::ApplicationController
-  before_filter :build_administrator_session,    :only => [:new, :create]
-  before_filter :administrator_sign_in_required, :only => [:destroy]
+  skip_before_filter :administrator_sign_in_required, :only => [:new, :create]
+  before_filter      :build_administrator_session,    :only => [:new, :create]
 
   def create
     if @administrator_session.save

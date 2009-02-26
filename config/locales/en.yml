@@ -11,6 +11,13 @@ en:
 
   welcome: 'Welcome'
 
+  new_invitation:
+    submit: 'Invite'
+
+  invitation:
+    one: '{{count}} Invitation'
+    other: '{{count}} Invitations'
+
   new_message:
     title: 'New Message'
     submit: 'Send'
@@ -24,6 +31,10 @@ en:
     blurb: 'Find out when we launch--and maybe get a beta invite?'
     submit: 'Subscribe'
     thank_you: 'Thank You' # FIXME
+
+  admin:
+    subscribers:
+      title: Subscribers
 
   activerecord:
     errors:

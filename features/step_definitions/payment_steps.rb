@@ -1,12 +1,3 @@
-def paypal_notification_parameters(payment)
-  {
-    :business => Application[:paypal_account],
-    :mc_currency => 'USD',
-    :mc_gross => payment.amount.dollars,
-    :payment_status => 'Completed',
-  }
-end
-
 When /^I submit the PayPal form$/ do
   @payment = Payment.last
   assert_redirected_to @payment.paypal_url(payment_notifications_url(@payment))

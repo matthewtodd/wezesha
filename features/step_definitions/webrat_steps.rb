@@ -11,12 +11,12 @@ When /^I go to the (.+) page(?: for (.+))?$/ do |page_name, subdomain|
   visit path_to(page_name, :subdomain => subdomain)
 end
 
-When /^I press "(.*)"$/ do |button|
-  click_button(button)
+When /^I press "(.*?)"(?: for (?:(.+) "(.*)"))?$/ do |button, finder, parameter|
+  optionally_within_record(finder, parameter) { click_button(button) }
 end
 
-When /^I follow "(.*)"$/ do |link|
-  click_link(link)
+When /^I follow "(.*?)"(?: for (?:(.+) "(.*)"))?$/ do |link, finder, parameter|
+  optionally_within_record(finder, parameter) { click_link(link) }
 end
 
 When /^I fill in "(.*)" with "(.*)"$/ do |field, value|

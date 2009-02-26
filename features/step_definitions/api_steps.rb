@@ -1,7 +1,3 @@
-def http_basic_authentication_credentials(user = current_user)
-  ActionController::HttpAuthentication::Basic.encode_credentials(user.single_access_token, 'X')
-end
-
 When /^I use the API (without my credentials )?to send "(.*)" to (.+)$/ do |unauthorized, text, phone_number_method|
   data = { :recipient => call_method(phone_number_method), :text => text }.to_xml(:root => :message)
 

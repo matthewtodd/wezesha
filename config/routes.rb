@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
     account.resources :messages, :vcards, :only => [:new, :create, :show]
 
     account.resources :payments, :only => [:new, :create] do |payment|
-      payment.resources :notifications, :only => [:create], :controller => 'payment/notifications'
+      payment.resources :notifications, :only => [:create], :controller => 'payments/notifications'
     end
 
     account.resource :user_session, :only => [:new, :create, :destroy], :as => 'session'
@@ -20,6 +20,10 @@ ActionController::Routing::Routes.draw do |map|
   # =============================================================================
   map.with_options(:conditions => { :subdomain => false }) do |site|
     site.namespace :admin do |admin|
+      admin.resources :subscribers, :only => [:index] do |subscriber|
+        subscriber.resources :invitations, :only => [:create], :controller => 'subscribers/invitations'
+      end
+
       admin.resource :administrator_session, :only => [:new, :create, :destroy], :as => 'session'
       admin.root :controller => 'pages'
     end

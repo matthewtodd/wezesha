@@ -8,8 +8,12 @@ def path_to(page_name, options = {})
   when /^sign up$/i
     new_account_path(options)
 
-  when /^administrator sign in$/i
+  # Administrative section
+  when /^administrative sign in$/i
     new_admin_administrator_session_path(options)
+
+  when /^administrative subscribers$/i
+    admin_subscribers_path(options)
 
   # Subdomains
   when /^sign in$/i

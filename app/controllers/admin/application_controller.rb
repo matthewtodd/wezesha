@@ -5,6 +5,7 @@ class Admin::ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
+  before_filter :administrator_sign_in_required
   before_filter :set_locale
   helper_method :current_administrator
 

@@ -1,9 +1,6 @@
-def current_account
-  @current_account ||= Account.first
-end
-
+# FIXME get rid of this?
 def load_account(subdomain)
-  @current_account = Account.find_by_subdomain!(subdomain)
+  @current_account = existing_account(subdomain)
 end
 
 Given /^the (.+) account has (\d+) dollars in it$/ do |subdomain, amount|

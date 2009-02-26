@@ -1,0 +1,10 @@
+%tr[subscriber]
+  %td.gravatar
+    = gravatar(subscriber.email)
+  %td.name
+    = subscriber.name
+    = mail_to(subscriber.email)
+  %td.actions
+    = t(:invitation, :count => subscriber.invitations.count) unless subscriber.invitations.count.zero?
+    = link_to t('new_invitation.submit'), admin_subscriber_invitations_path(subscriber), :class => :invite, :method => :post
+    Unsubscribe
