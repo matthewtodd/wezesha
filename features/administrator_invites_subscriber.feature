@@ -8,4 +8,5 @@ Feature: Administrator Invites Subscriber
     And I am on the administrative subscribers page
     When I follow "Invite" for existing subscriber "subscriber@example.com"
     Then existing subscriber "subscriber@example.com" should have 1 Invitation
+    And an email should be sent to "subscriber@example.com"
     

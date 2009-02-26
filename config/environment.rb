@@ -26,6 +26,11 @@ Rails::Initializer.run do |config|
   config.action_controller.session = { :key => '_wezesha_session', :secret => File.read(Rails.root.join('config', 'secret.txt')).strip }
 
   config.after_initialize do
+    ActionMailer::Base.delivery_method               = Application[:action_mailer_delivery_method]
+    ActionMailer::Base.default_url_options[:host]    = Application[:action_mailer_host]
+    ActionMailer::Base.sendmail_settings[:location]  = Application[:action_mailer_sendmail_location]
+    ActionMailer::Base.sendmail_settings[:arguments] = Application[:action_mailer_sendmail_arguments]
+
     ActionView::Base.default_form_builder = ApplicationHelper::LocalizedFormBuilder
   end
 end

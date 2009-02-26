@@ -35,6 +35,12 @@ en:
   subscriber:
     destroy: 'Unsubscribe'
 
+  mailer:
+    invitation:
+      created:
+        subject: 'Your Wezesha Invitation Code' # FIXME
+        body: 'Follow this link to create your Account.' # FIXME
+
   admin:
     subscribers:
       title: Subscribers

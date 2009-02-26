@@ -1,1 +1,1 @@
-Application = YAML.load_file(Rails.root.join('config', 'application.yml')).fetch(Rails.env).symbolize_keys
+Application = YAML.load(ERB.new(IO.read(Rails.root.join('config', 'application.yml'))).result).fetch(Rails.env).symbolize_keys

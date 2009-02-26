@@ -35,6 +35,10 @@ sw:
   subscriber:
     destroy: 'Mwondoe'
 
+  mailer:
+    invitation:
+      created:
+
   admin:
     subscribers:
       title: Waliojiandikisha
