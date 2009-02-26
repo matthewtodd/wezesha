@@ -1,5 +1,5 @@
 - form_for @message do |form|
-  %h2= t('new_message.title')
+  %h2= t('.title')
 
   .field
     = form.label :recipient, :append_text => form.error_message_on(:recipient)
@@ -10,4 +10,4 @@
     = form.text_area(:text)
 
   .submit
-    = form.submit t('new_message.submit')
+    = form.submit t('.submit')

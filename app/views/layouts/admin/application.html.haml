@@ -11,7 +11,7 @@
 
       - if current_administrator
         %ul#account
-          %li= link_to t('sign_out.title'), admin_administrator_session_path, :method => :delete
+          %li= link_to t('admin.administrator_sessions.destroy.title'), admin_administrator_session_path, :method => :delete
 
     #content
       #flash

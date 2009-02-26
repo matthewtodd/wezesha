@@ -5,8 +5,8 @@ class Admin::ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
-  before_filter :administrator_sign_in_required
   before_filter :set_locale
+  before_filter :administrator_sign_in_required
   helper_method :current_administrator
 
   protected
@@ -38,7 +38,7 @@ class Admin::ApplicationController < ActionController::Base
   def administrator_sign_in_required
     unless current_administrator
       respond_to do |format|
-        format.html { store_location; flash[:error] = t('sign_in.required'); redirect_to new_admin_administrator_session_path }
+        format.html { store_location; flash[:error] = t('admin.administrator_sessions.new.required'); redirect_to new_admin_administrator_session_path }
         format.any  { render :nothing => true, :status => :unauthorized }
       end
     end

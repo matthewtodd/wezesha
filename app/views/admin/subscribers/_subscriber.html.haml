@@ -5,6 +5,6 @@
     = subscriber.name
     = mail_to(subscriber.email)
   %td.actions
-    = t(:invitation, :count => subscriber.invitations.count) unless subscriber.invitations.count.zero?
-    = link_to t('new_invitation.submit'), admin_subscriber_invitations_path(subscriber), :confirm => "Are you sure you want to invite #{subscriber.email}?", :class => :invite, :method => :post
-    = link_to t('subscriber.destroy'), admin_subscriber_path(subscriber), :confirm => "Are you sure you want to unsubscribe #{subscriber.email}?", :class => :unsubscribe, :method => :delete
+    = t('.invite.count', :count => subscriber.invitations.count) unless subscriber.invitations.count.zero?
+    = link_to t('.invite.submit'), admin_subscriber_invitations_path(subscriber), :confirm => t('.invite.confirm', :email => subscriber.email), :class => :invite, :method => :post
+    = link_to t('.destroy.submit'), admin_subscriber_path(subscriber), :confirm => t('.destroy.confirm', :email => subscriber.email), :class => :unsubscribe, :method => :delete

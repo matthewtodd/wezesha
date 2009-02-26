@@ -1,50 +1,79 @@
 en:
   locale_name: 'English'
-  sign_up: 'Sign Up'
 
-  sign_in:
-    title: 'Sign In'
-    required: 'Please sign in first.'
+  # ===========================================================================
+  # = Users                                                                   =
+  # ===========================================================================
+  accounts:
+    new:
+      title: 'Sign Up'
+    show:
+      title: 'Welcome'
 
-  sign_out:
-    title: 'Sign Out'
+  messages:
+    new:
+      submit: 'Send'
+      title: 'New Message'
 
-  welcome: 'Welcome'
+  payments:
+    new:
+      submit: 'Buy Credit'
+      title: 'New Payment'
 
-  new_invitation:
-    submit: 'Invite'
+  subscribers:
+    create:
+      thank_you: 'Thank You' # FIXME
+    form:
+      blurb: 'Find out when we launch--and maybe get a beta invite?'
+      submit: 'Subscribe'
+      title: 'Subscribe'
 
-  invitation:
-    one: '{{count}} Invitation'
-    other: '{{count}} Invitations'
+  user_sessions:
+    new:
+      required: 'Please sign in first.'
+      title: 'Sign In'
+    destroy:
+      title: 'Sign Out'
 
-  new_message:
-    title: 'New Message'
-    submit: 'Send'
+  # ===========================================================================
+  # = Administrators                                                          =
+  # ===========================================================================
+  admin:
+    administrator_sessions:
+      new:
+        required: 'Please sign in first.'
+        title: 'Sign In'
+      destroy:
+        title: 'Sign Out'
+    pages:
+      index:
+        title: 'Welcome'
+    subscribers:
+      index:
+        title: 'Subscribers'
+      subscriber:
+        destroy:
+          confirm: 'Are you sure you want to unsubscribe {{email}}?'
+          submit: 'Unsubscribe'
+        invite:
+          confirm: 'Are you sure you want to invite {{email}}?'
+          count:
+            one: '{{count}} Invitation'
+            other: '{{count}} Invitations'
+          submit: 'Invite'
 
-  new_payment:
-    title: 'New Payment'
-    submit: 'Buy Credit'
-
-  new_subscriber:
-    title: 'Subscribe'
-    blurb: 'Find out when we launch--and maybe get a beta invite?'
-    submit: 'Subscribe'
-    thank_you: 'Thank You' # FIXME
-
-  subscriber:
-    destroy: 'Unsubscribe'
-
+  # ===========================================================================
+  # = ActionMailer                                                            =
+  # ===========================================================================
   mailer:
     invitation:
       created:
         subject: 'Your Wezesha Invitation Code' # FIXME
         body: 'Follow this link to create your Account.' # FIXME
 
-  admin:
-    subscribers:
-      title: Subscribers
-
+  # ===========================================================================
+  # = ActiveRecord                                                            =
+  # ===========================================================================
   activerecord:
     errors:
       messages:
@@ -56,6 +85,9 @@ en:
             subdomain:
               invalid: "may only contain lowercase letters"
 
+  # ===========================================================================
+  # = Authlogic                                                               =
+  # ===========================================================================
   authlogic:
     error_messages:
       login_blank: "can't be blank"

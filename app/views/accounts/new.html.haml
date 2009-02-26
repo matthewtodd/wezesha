@@ -1,5 +1,5 @@
 - form_for prepare_new_account(@account) do |form|
-  %h2= t(:sign_up)
+  %h2= t('.title')
 
   .field
     = form.label :invitation_code, :append_text => form.error_message_on(:invitation_id)
@@ -20,4 +20,4 @@
       = user_form.password_field :password_confirmation
 
   .submit
-    = form.submit t(:sign_up)
+    = form.submit t('.title')

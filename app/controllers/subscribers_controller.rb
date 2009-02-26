@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
 
   def create
     if @subscriber.save
-      flash[:notice] = t('new_subscriber.thank_you')
+      flash[:notice] = t('subscribers.create.thank_you')
       redirect_to root_path
     else
       render :new

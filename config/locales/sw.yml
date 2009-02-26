@@ -1,48 +1,79 @@
 sw:
   locale_name: 'Kiswahili'
-  sign_up: 'Jiandikishe'
 
-  sign_in:
-    title: 'Kuingia'
-    required: 'Tafadhali ingia kwanza.'
+  # ===========================================================================
+  # = Users                                                                   =
+  # ===========================================================================
+  accounts:
+    new:
+      title: 'Jiandikishe'
+    show:
+      title: 'Karibu'
 
-  sign_out:
-    title: 'Kutoka'
+  messages:
+    new:
+      submit: 'Tuma'
+      title: 'Ujumbe Mpya'
 
-  welcome: 'Karibu'
+  payments:
+    new:
+      submit: 'Nunua Muda'
+      title: 'Malipo Mapya'
 
-  new_invitation:
-    submit: 'Mwalike'
+  subscribers:
+    create:
+      thank_you: ''
+    form:
+      blurb: 'Fahamu ni lini tutazindua--na unaweza kupata mwaliko wa majaribio.'
+      submit: 'Jiandikishe'
+      title: 'Jiandikishe'
 
-  invitation:
-    one: 'Mwaliko {{count}}'
-    other: 'Mialiko {{count}}'
+  user_sessions:
+    new:
+      required: 'Tafadhali ingia kwanza.'
+      title: 'Kuingia'
+    destroy:
+      title: 'Kutoka'
 
-  new_message:
-    title: 'Ujumbe Mpya'
-    submit: 'Tuma'
+  # ===========================================================================
+  # = Administrators                                                          =
+  # ===========================================================================
+  admin:
+    administrator_sessions:
+      new:
+        required: 'Tafadhali ingia kwanza.'
+        title: 'Kuingia'
+      destroy:
+        title: 'Kutoka'
+    pages:
+      index:
+        title: 'Karibu'
+    subscribers:
+      index:
+        title: Waliojiandikisha
+      subscriber:
+        destroy:
+          confirm: ''
+          submit: 'Mwondoe'
+        invite:
+          confirm: ''
+          count:
+            one: 'Mwaliko {{count}}'
+            other: 'Mialiko {{count}}'
+          submit: 'Mwalike'
 
-  new_payment:
-    title: 'Malipo Mapya'
-    submit: 'Nunua Muda'
-
-  new_subscriber:
-    title: 'Jiandikishe'
-    blurb: 'Fahamu ni lini tutazindua--na unaweza kupata mwaliko wa majaribio.'
-    submit: 'Jiandikishe'
-    thank_you: 'Asante' # FIXME
-
-  subscriber:
-    destroy: 'Mwondoe'
-
+  # ===========================================================================
+  # = ActionMailer                                                            =
+  # ===========================================================================
   mailer:
     invitation:
       created:
+        body: ''
+        subject: ''
 
-  admin:
-    subscribers:
-      title: Waliojiandikisha
-
+  # ===========================================================================
+  # = ActiveRecord                                                            =
+  # ===========================================================================
   activerecord:
     attributes:
       account:
@@ -66,25 +97,24 @@ sw:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
         remember_me: 'Nikumbuke'
-
     errors:
       messages:
-        equality: "inatakiwa iwe {{expected_value}}"
-
+        equality: 'inatakiwa iwe {{expected_value}}'
       models:
         account:
           attributes:
             subdomain:
-              invalid: "inatakiwa herufi ndogo tu"
+              invalid: 'inatakiwa herufi ndogo tu'
         message:
           attributes:
             text:
-              # FIXME can we customize messages by noun class?
-              empty: "hautakiwi kuwa wazi"
-              blank: "hautakiwi kuwa wazi"
-              too_long: "ni mrefu sana (usizidi herufi {{count}})"
+              empty: 'hautakiwi kuwa wazi'
+              blank: 'hautakiwi kuwa wazi'
+              too_long: 'ni mrefu sana (usizidi herufi {{count}})'
 
-
+  # ===========================================================================
+  # = Authlogic                                                               =
+  # ===========================================================================
   authlogic:
     error_messages:
       login_blank: 'haitakiwi kuwa wazi'

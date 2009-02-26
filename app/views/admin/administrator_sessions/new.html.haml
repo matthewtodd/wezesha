@@ -1,5 +1,5 @@
 - form_for @administrator_session, :url => admin_administrator_session_path do |form|
-  %h2= t('sign_in.title')
+  %h2= t('.title')
 
   .field
     = form.label :email, :append_text => form.error_message_on(:email)
@@ -14,4 +14,4 @@
     = form.label :remember_me
 
   .submit
-    = form.submit t('sign_in.title')
+    = form.submit t('.title')

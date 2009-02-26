@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   def user_sign_in_required
     unless current_user
       respond_to do |format|
-        format.html { store_location; flash[:error] = t('sign_in.required'); redirect_to new_user_session_path }
+        format.html { store_location; flash[:error] = t('user_sessions.new.required'); redirect_to new_user_session_path }
         format.any  { render :nothing => true, :status => :unauthorized }
       end
     end
