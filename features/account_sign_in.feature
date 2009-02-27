@@ -8,7 +8,7 @@ Feature: Sign In
     When I fill in "Email" with "developer@acme.example.com"
     And I fill in "Password" with "secret"
     And I press "Sign In"
-    Then I should see "Welcome"
+    Then I should see "Your balance is"
   
   Scenario: Failed Sign In
     Given I am on the sign in page for acme

@@ -8,7 +8,10 @@ en:
     new:
       title: 'Sign Up'
     show:
-      title: 'Welcome'
+      balance: 'Your balance is {{balance}} dollars.'
+      entries:
+        caption: 'Recent activity'
+
 
   messages:
     new:
@@ -16,9 +19,9 @@ en:
       title: 'New Message'
 
   payments:
-    new:
+    form:
+      prompt: 'Add'
       submit: 'Buy Credit'
-      title: 'New Payment'
 
   subscribers:
     create:
@@ -83,6 +86,13 @@ en:
           attributes:
             subdomain:
               invalid: "may only contain lowercase letters"
+
+  # ===========================================================================
+  # = ActiveSupport                                                           =
+  # ===========================================================================
+  datetime:
+    distance_in_words:
+      ago: 'ago'
 
   # ===========================================================================
   # = Authlogic                                                               =

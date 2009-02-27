@@ -6,9 +6,8 @@ Feature: Send a Message
   Scenario: Web UI
     Given the acme account has 2 dollars in it
     And I am signed in to acme as developer@acme.example.com
-    And I am on the account page for acme
-    When I follow "New Message"
-    And I fill in "Recipient" with some phone number
+    And I am on the new message page for acme
+    When I fill in "Recipient" with some phone number
     And I fill in "Text" with "Hi, I'm testing out the system."
     And I press "Send"
     Then the message "Hi, I'm testing out the system." should be delivered to some phone number

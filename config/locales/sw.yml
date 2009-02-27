@@ -8,7 +8,9 @@ sw:
     new:
       title: 'Jiandikishe'
     show:
-      title: 'Karibu'
+      balance: 'Salio lako ni dollars {{balance}}.'
+      entries:
+        caption: 'Muhtasari wa akaunti yako'
 
   messages:
     new:
@@ -16,9 +18,9 @@ sw:
       title: 'Ujumbe Mpya'
 
   payments:
-    new:
+    form:
+      prompt: 'Ongeza'
       submit: 'Nunua Muda'
-      title: 'Malipo Mapya'
 
   subscribers:
     create:
@@ -74,6 +76,9 @@ sw:
   # = ActiveRecord                                                            =
   # ===========================================================================
   activerecord:
+    models:
+      message: 'Ujumbe'
+
     attributes:
       account:
         invitation_code: 'Mwaliko'
@@ -110,6 +115,13 @@ sw:
               empty: 'hautakiwi kuwa wazi'
               blank: 'hautakiwi kuwa wazi'
               too_long: 'ni mrefu sana (usizidi herufi {{count}})'
+
+  # ===========================================================================
+  # = ActiveSupport                                                           =
+  # ===========================================================================
+  datetime:
+    distance_in_words:
+      ago: 'nyuma'
 
   # ===========================================================================
   # = Authlogic                                                               =

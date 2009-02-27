@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   before_filter :user_sign_in_required
-  before_filter :build_payment, :only => [:new, :create]
+  before_filter :build_payment, :only => :create
 
   def create
     if @payment.save

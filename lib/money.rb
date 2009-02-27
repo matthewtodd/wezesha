@@ -9,6 +9,10 @@ class Money
 
   include Comparable
 
+  def initialize(cents)
+    @cents = cents
+  end
+
   def <=>(other)
     cents <=> other.cents
   end
@@ -25,9 +29,11 @@ class Money
     self.class.cents(-cents)
   end
 
-  private
+  def negative?
+    @cents < 0
+  end
 
-  def initialize(cents)
-    @cents = cents
+  def to_s
+    '%01.2f' % dollars
   end
 end

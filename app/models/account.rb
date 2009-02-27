@@ -16,7 +16,7 @@ class Account < ActiveRecord::Base
   authenticates_many :user_sessions
 
   has_many :payments, :through => :users
-  has_many :entries
+  has_many :entries, :order => :created_at
 
   def balance
     Money.cents(entries.sum(:cents))

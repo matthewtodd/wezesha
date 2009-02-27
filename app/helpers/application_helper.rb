@@ -1,5 +1,16 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def entry_source_detail(source)
+    case source
+    when NilClass
+      ''
+    when Message
+      link_to source.recipient, source
+    else
+      raise
+    end
+  end
+
   # Step 3, The size: You can specify a "size" or "s" parameter to the URL
   # between 1 and 512 (pixels.) If you ommit this step we use a default size
   # of 80 pixels.
@@ -18,6 +29,14 @@ module ApplicationHelper
 
   def host_without_subdomain
     SubdomainFu.host_without_subdomain(request.host)
+  end
+
+  def money(amount)
+    if amount.negative?
+      content_tag(:span, "(#{amount.negated})", :class => 'money negative')
+    else
+      content_tag(:span, amount, :class => 'money positive')
+    end
   end
 
   def other_locales

@@ -1,0 +1,5 @@
+- form_for current_user.payments.build, :html => { :class => :inline } do |form|
+  .field
+    = form.label :cents, t('.prompt')
+    = form.collection_select :cents, [5, 10].map { |amount| Money.dollars(amount) }, :cents, :to_s
+    = form.submit t('.submit')

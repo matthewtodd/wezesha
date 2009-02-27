@@ -1,5 +1,9 @@
-%h2= t('.title')
+.account
+  %h2= t('.balance', :balance => money(@account.balance))
 
-%ul
-  %li= link_to t('messages.new.title'), new_message_path
-  %li= link_to t('payments.new.title'), new_payment_path
+  = render 'payments/form'
+
+  - if @account.entries.any?
+    %table.entries
+      %caption= t('.entries.caption')
+      = render @account.entries.last(10)

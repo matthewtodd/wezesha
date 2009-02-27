@@ -1,5 +1,5 @@
 matthewtodd:
-  account: matthewtodd
+  account_id: 1
   crypted_password: 4f9c4ca4df09e6570702a711a0f200b81732112c27a49914a77891bf417aa9e51afb86da4effc2e91c7a620bd514cdf342cf56edb1b50f0841606a58203905fc
   email: matthew.todd@gmail.com
   password_salt: d597927161c574ade5d70b8d0a152d41708d92dec5dd900ccc2eb6979a1f62ba9a71ef26684552df50e203a63ec600503ff09afb313270badb780f618153fa61

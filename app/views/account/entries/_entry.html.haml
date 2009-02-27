@@ -1,0 +1,5 @@
+%tr[entry]
+  %td= time_ago_in_words(entry.created_at).concat(' ').concat(t('datetime.distance_in_words.ago'))
+  %td= entry.source.try(:class).try(:human_name)
+  %td= entry_source_detail(entry.source)
+  %td= money(entry.amount)
