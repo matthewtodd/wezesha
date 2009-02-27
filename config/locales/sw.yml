@@ -24,7 +24,7 @@ sw:
 
   subscribers:
     create:
-      thank_you: ''
+      thank_you: "Asante! Tutawasiliana na wewe muda mfupi kutoka sasa."
     form:
       blurb: 'Fahamu ni lini tutazindua--na unaweza kupata mwaliko wa majaribio.'
       submit: 'Jiandikishe'
@@ -55,10 +55,10 @@ sw:
         title: Waliojiandikisha
       subscriber:
         destroy:
-          confirm: ''
+          confirm: 'Je, unahakika unataka kumwondoa {{email}}?'
           submit: 'Mwondoe'
         invite:
-          confirm: ''
+          confirm: 'Je, unahakika unataka kumwalika {{email}}?'
           count:
             one: 'Mwaliko {{count}}'
             other: 'Mialiko {{count}}'
@@ -69,8 +69,8 @@ sw:
   # ===========================================================================
   mailer:
     invitation_created:
-        body: ''
-        subject: ''
+      subject: 'namba yako ya mwaliko ya mtandao wa Wezesha'
+      body: 'Karibu! Namba yako ya mwaliko ya mtandao wa Wezesha ni {{invitation_code}}. Fuata kiunganishi hiki kufungua akaunti yako:'
 
   # ===========================================================================
   # = ActiveRecord                                                            =
@@ -81,7 +81,7 @@ sw:
 
     attributes:
       account:
-        invitation_code: 'Mwaliko'
+        invitation_code: 'Namba ya mwaliko'
         subdomain: 'Subdomain'
       administrator_session:
         email: 'Anuani ya barua pepe'

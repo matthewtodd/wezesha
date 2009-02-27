@@ -7,9 +7,9 @@ Feature: Subscribe
     Given I am on the home page
     When I fill in "Email" with "developer@example.com"
     And I press "Subscribe"
-    Then I should see "Thank You"
+    Then I should see "Thanks"
 
   Scenario: Invalid New Subscriber
     Given I am on the home page
     When I press "Subscribe"
-    Then I should not see "Thank You"
+    Then I should not see "Thanks"

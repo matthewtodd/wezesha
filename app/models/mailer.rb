@@ -5,7 +5,7 @@ class Mailer < ActionMailer::Base
     recipients invitation.email
     from       Application[:email]
 
-    body       :body => I18n.t('mailer.invitation_created.body', :raise => true),
+    body       :body => I18n.t('mailer.invitation_created.body', :invitation_code => invitation.code, :raise => true),
                :url => new_account_url(:account => { :invitation_code => invitation.code })
   end
 end

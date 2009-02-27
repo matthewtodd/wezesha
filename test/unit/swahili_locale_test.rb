@@ -6,7 +6,7 @@ class SwahiliLocaleTest < ActiveSupport::TestCase
 
   def self.should_have_the_same_structure_as(expected, actual, prefix=nil)
     expected.each do |key, value|
-      should("have a translation for #{prefix}#{key}") { assert !actual[key].blank? }
+      should("have a translation for #{prefix}#{key}") { assert !actual[key].blank?, "translation missing: #{prefix}#{key}" }
       should_have_the_same_structure_as(expected[key], actual[key], "#{prefix}#{key}.") if value.is_a?(Hash) && actual.has_key?(key)
     end
   end
