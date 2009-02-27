@@ -4,8 +4,8 @@ Feature: Send a Message
   I want to send a message to their phone
 
   Scenario: Web UI
-    Given the acme account has 2 dollars in it
-    And I am signed in to acme as developer@acme.example.com
+    Given I am signed in to acme as developer@acme.example.com
+    And I have made a payment for 2 dollars
     And I am on the new message page for acme
     When I fill in "Recipient" with some phone number
     And I fill in "Text" with "Hi, I'm testing out the system."
@@ -21,16 +21,16 @@ Feature: Send a Message
     Then I should not see "translation missing"
   
   Scenario: API
-    Given the acme account has 2 dollars in it
+    Given I have made a payment for 2 dollars
     When I use the API to send "Hi, I'm testing out the Active Resource API." to some phone number
     Then I should receive a Created status
 
   Scenario: API Authentication Required
-    Given the acme account has 2 dollars in it
+    Given I have made a payment for 2 dollars
     When I use the API without my credentials to send "Hi, I'm testing out the Active Resource API." to some phone number
     Then I should receive an Unauthorized error
 
   Scenario: API Invalid
-    Given the acme account has 2 dollars in it
+    Given I have made a payment for 2 dollars
     When I use the API to send "" to some phone number
     Then I should receive an Unprocessable Entity error

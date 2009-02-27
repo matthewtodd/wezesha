@@ -10,6 +10,14 @@ def current_administrator
   @current_administrator ||= Administrator.first
 end
 
+def current_payment(reload = false)
+  if reload
+    @current_payment = current_user.payments.reload.last
+  else
+    @current_payment ||= current_user.payments.last
+  end
+end
+
 def current_user
   @current_user ||= User.first
 end
@@ -36,6 +44,10 @@ def optionally_within_record(finder, parameter)
   else
     yield
   end
+end
+
+def paypal_notification(payment)
+  ActiveMerchant::Billing::Integrations::Paypal::Notification.new(paypal_notification_parameters(payment).to_query)
 end
 
 def paypal_notification_parameters(payment)

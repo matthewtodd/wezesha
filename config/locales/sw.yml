@@ -78,6 +78,7 @@ sw:
   activerecord:
     models:
       message: 'Ujumbe'
+      payment/notification: 'Malipo'
 
     attributes:
       account:

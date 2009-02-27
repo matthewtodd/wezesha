@@ -15,7 +15,7 @@ class Payment::Notification < ActiveRecord::Base
   validates_equality_of :notification_currency, :with => 'USD'
 
   # Make sure we don't record completed transactions twice.
-  validates_uniqueness_of :status, :if => :notification_complete?
+  validates_uniqueness_of :status, :scope => :payment_id, :if => :notification_complete?
 
   # Credit the user's account.
   after_create :credit_account, :if => :notification_complete?

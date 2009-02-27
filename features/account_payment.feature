@@ -4,8 +4,8 @@ Feature: Make a Payment
   I want to be able to make a payment for my account
 
   Scenario: Web UI
-    Given the acme account has 2 dollars in it
-    And I am signed in to acme as developer@acme.example.com
+    Given I am signed in to acme as developer@acme.example.com
+    And I have made a payment for 2 dollars
     And I am on the account page for acme
     When I select "10.00" from "Add"
     And I press "Buy Credit"
@@ -14,8 +14,8 @@ Feature: Make a Payment
     Then the acme account should have 12 dollars in it
 
   Scenario: Web UI -- Unacknowledged Paypal Notification
-    Given the acme account has 2 dollars in it
-    And I am signed in to acme as developer@acme.example.com
+    Given I am signed in to acme as developer@acme.example.com
+    And I have made a payment for 2 dollars
     And I am on the account page for acme
     When I press "Buy Credit"
     And I submit the PayPal form
@@ -23,8 +23,8 @@ Feature: Make a Payment
     Then the acme account should have 2 dollars in it
 
   Scenario: Web UI -- Invalid Paypal Notification
-    Given the acme account has 2 dollars in it
-    And I am signed in to acme as developer@acme.example.com
+    Given I am signed in to acme as developer@acme.example.com
+    And I have made a payment for 2 dollars
     And I am on the account page for acme
     When I press "Buy Credit"
     And I submit the PayPal form

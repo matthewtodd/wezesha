@@ -2,12 +2,14 @@
 module ApplicationHelper
   def entry_source_detail(source)
     case source
-    when NilClass
-      ''
     when Message
       link_to source.recipient, source
+    when NilClass
+      ''
+    when Payment::Notification
+      ''
     else
-      raise
+      raise "entry_source_detail doesn't know how to handle #{source.class}"
     end
   end
 

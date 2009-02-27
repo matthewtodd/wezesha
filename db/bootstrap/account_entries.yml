@@ -1,9 +1,17 @@
 # Bummer, fixture loader doesn't map account_entries back to Account::Entry,
 # so we have to use literal id's instead of "foxy fixture"-style refrences.
-entry:
+credit:
+  account_id: 1
+  cents: 1000
+  source_type: Payment::Notification
+  source_id: 1
+  created_at: <%= 5.days.ago.utc.to_s(:db) %>
+  updated_at: <%= 5.days.ago.utc.to_s(:db) %>
+
+charge:
   account_id: 1
   cents: -5
   source_type: Message
   source_id: 1
-  created_at: <%= Time.now.utc.to_s(:db) %>
-  updated_at: <%= Time.now.utc.to_s(:db) %>
+  created_at: <%= 2.minutes.ago.utc.to_s(:db) %>
+  updated_at: <%= 2.minutes.ago.utc.to_s(:db) %>
