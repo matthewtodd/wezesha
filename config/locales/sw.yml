@@ -66,8 +66,7 @@ sw:
   # = ActionMailer                                                            =
   # ===========================================================================
   mailer:
-    invitation:
-      created:
+    invitation_created:
         body: ''
         subject: ''
 

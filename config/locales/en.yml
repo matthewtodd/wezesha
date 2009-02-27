@@ -66,10 +66,9 @@ en:
   # = ActionMailer                                                            =
   # ===========================================================================
   mailer:
-    invitation:
-      created:
-        subject: 'Your Wezesha Invitation Code' # FIXME
-        body: 'Follow this link to create your Account.' # FIXME
+    invitation_created:
+      subject: 'Your Wezesha Invitation Code' # FIXME
+      body: 'Follow this link to create your Account.' # FIXME
 
   # ===========================================================================
   # = ActiveRecord                                                            =
