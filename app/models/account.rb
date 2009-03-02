@@ -30,6 +30,10 @@ class Account < ActiveRecord::Base
     entries.create(:source => payment_notification, :amount => payment_notification.payment_amount)
   end
 
+  def sufficient_balance_for?(message)
+    true
+  end
+
   private
 
   def load_invitation

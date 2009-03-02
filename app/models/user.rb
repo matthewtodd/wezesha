@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :vcards # FIXME get this out of here!
   has_many :payments
+
+  delegate :sufficient_balance_for?, :to => :account
 end

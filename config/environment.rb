@@ -12,7 +12,7 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem 'haml'
   config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
-  config.gem 'RedCloth', :lib => 'redcloth', :version => '>= 4.0.4'
+  config.gem 'RedCloth', :lib => 'redcloth'
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

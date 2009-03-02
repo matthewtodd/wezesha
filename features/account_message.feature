@@ -34,3 +34,8 @@ Feature: Send a Message
     Given I have made a payment for 2 dollars
     When I use the API to send "" to some phone number
     Then I should receive an Unprocessable Entity error
+
+  Scenario: API Insufficient Funds
+    Given I have not made any payments
+    When I use the API to send "Hi, I'm testing out the Active Resource API." to some phone number
+    Then I should receive an Unprocessable Entity error

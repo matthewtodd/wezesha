@@ -3,6 +3,10 @@ Given /^I have made a payment for (\d+) dollars$/ do |amount|
   payment.notifications.make(:notification => paypal_notification(payment))
 end
 
+Given /^I have not made any payments$/ do
+  assert_equal Money.dollars(0), current_account.balance
+end
+
 When /^I submit the PayPal form$/ do
   payment = current_payment(:reload)
   assert_redirected_to payment.paypal_url(payment_notifications_url(payment))
