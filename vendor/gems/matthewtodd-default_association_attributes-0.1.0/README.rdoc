@@ -1,0 +1,31 @@
+=DefaultAssociationAttributes
+
+Because sometimes all you want to say is
+
+ @subscriber.invitations.build
+
+For more motivation, see the blog post, http://matthewtodd.org/2009/03/02/default-association-attributes-in-active_record.html
+
+==Installation
+
+As a gem:
+
+  config.gem 'matthewtodd-default_association_attributes', :lib => 'default_association_attributes', :source => 'http://gems.github.com'
+
+As a plugin:
+
+  script/plugin install git://github.com/matthewtodd/default_association_attributes.git
+
+==Usage
+
+In your model:
+
+ class Subscriber < ActiveRecord::Base
+   has_many :invitations, :extend => DefaultAssociationAttributes do
+     def default_attributes
+       { :email => proxy_owner.email }
+     end
+   end
+ end
+
+Copyright (c) 2009 Matthew Todd, released under the MIT license

@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'activemerchant', :lib => 'active_merchant'
   config.gem 'authlogic'
   config.gem 'haml'
+  config.gem 'matthewtodd-default_association_attributes', :lib => 'default_association_attributes', :source => 'http://gems.github.com'
   config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
   config.gem 'RedCloth', :lib => 'redcloth'
 
