@@ -36,27 +36,37 @@ class AccountTest < ActiveSupport::TestCase
 
     should 'set a custom error message on the Invitation' do
       @account.valid?
-      assert_equal 'is invalid', @account.errors.on(:invitation_id)
+      assert_contains @account.errors.on(:invitation_id).to_a, 'is invalid'
     end
   end
 
-  context 'given an existing account' do
-    setup { Account.make }
-    should_validate_uniqueness_of :invitation_id
-    should_validate_uniqueness_of :subdomain
-  end
-
-  context 'balance' do
+  context 'a newly-created Account' do
     setup { @account = Account.make }
 
-    should 'be 0 by default' do
+    should_validate_uniqueness_of :invitation_id
+    should_validate_uniqueness_of :subdomain
+
+    should 'have 0 balance by default' do
       assert_equal Money.new(0), @account.balance
     end
 
-    should 'be the sum of the entries' do
-      @account.entries.create(:amount => Money.new(400))
-      @account.entries.create(:amount => Money.new(600))
-      assert_equal Money.new(1000), @account.balance
+    should 'not have enough credit to send a message' do
+      assert !@account.sufficient_balance_for?(Message.make_unsaved)
+    end
+
+    context 'with some entries in it' do
+      setup do
+        @account.entries.create(:amount => Money.new(400))
+        @account.entries.create(:amount => Money.new(600))
+      end
+
+      should 'have balance equal to the sum of the entries' do
+        assert_equal Money.new(1000), @account.balance
+      end
+
+      should 'have enough credit to send a message' do
+        assert @account.sufficient_balance_for?(Message.make_unsaved)
+      end
     end
   end
 end

@@ -87,6 +87,10 @@ en:
           attributes:
             subdomain:
               invalid: "may only contain lowercase letters"
+        message:
+          attributes:
+            base:
+              insufficient_balance: 'Account balance too low'
 
   # ===========================================================================
   # = ActiveSupport                                                           =

@@ -112,6 +112,8 @@ sw:
               invalid: 'inatakiwa herufi ndogo tu'
         message:
           attributes:
+            base:
+              insufficient_balance: 'Salio lako ni dogo mno'
             text:
               empty: 'hautakiwi kuwa wazi'
               blank: 'hautakiwi kuwa wazi'

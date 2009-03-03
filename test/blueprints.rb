@@ -34,8 +34,12 @@ User.blueprint do
   password_confirmation 'secret'
 end
 
+User.blueprint(:with_credit) do
+  account { Account.make { |account| account.entries.make(:credit) } }
+end
+
 Message.blueprint do
-  user { User.make(:account => Account.make { |account| account.entries.make(:credit) }) }
+  user
   recipient { Sham.mobile_number }
   text { Faker::Lorem.sentence }
 end

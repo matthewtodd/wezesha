@@ -31,7 +31,7 @@ class Account < ActiveRecord::Base
   end
 
   def sufficient_balance_for?(message)
-    true
+    balance >= message.cost
   end
 
   private
