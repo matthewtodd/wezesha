@@ -8,9 +8,10 @@
       %caption= t('.entries.caption')
       = render @account.entries.last(10)
 
-.section
+.section.secondary
   %h2= t('.developer_api.title')
-  %p= t('.developer_api.blurb')
+  %p.api_key= t('.developer_api.key', :key => current_user.single_access_token)
+  %h3= t('.developer_api.examples')
   %p= t('.developer_api.curl')
   %pre.code&= "curl --user   '#{current_user.single_access_token}:X' \\\n     --header 'Content-Type: application/xml' \\\n     --data   '<text-message><recipient>255712345689</recipient><text>Hello</text></text-message>' \\\n     #{text_messages_url(:xml, :locale => :en)}"
   %p= t('.developer_api.active_resource')
