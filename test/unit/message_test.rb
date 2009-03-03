@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class MessageTest < ActiveSupport::TestCase
+  should_not_allow_mass_assignment_of *any_attribute_other_than(:recipient, :text)
+  
   context 'given sufficient credit, a new Message' do
     setup { @message = Message.make_unsaved(:user => User.make(:with_credit)) }
 

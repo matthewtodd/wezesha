@@ -78,6 +78,11 @@ en:
   activerecord:
     models:
       payment/notification: 'Payment'
+      vcard: 'VCard'
+
+    attributes:
+      account:
+        users_attributes: 'Users'
 
     errors:
       messages:
@@ -105,7 +110,7 @@ en:
   authlogic:
     error_messages:
       login_blank: "can't be blank"
-      # login_not_found: does not exist
+      # login_not_found: 'does not exist'
       # login_invalid: should use only letters, numbers, spaces, and .-_@ please.
       email_invalid: "should look like an email address"
       password_blank: "can't be blank"

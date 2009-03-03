@@ -1,4 +1,5 @@
 class Subscriber < ActiveRecord::Base
+  attr_accessible :name, :email
   default_scope :order => :created_at
 
   has_many :invitations, :as => :source, :dependent => :destroy, :extend => DefaultAssociationAttributes do

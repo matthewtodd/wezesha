@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class PaymentTest < ActiveSupport::TestCase
+  should_not_allow_mass_assignment_of *any_attribute_other_than(:cents)
+
   should_belong_to :user
   should_allow_values_for :cents, '1'
   should_not_allow_values_for :cents, '1.1', 'not a number', '', nil, :message => :not_a_number

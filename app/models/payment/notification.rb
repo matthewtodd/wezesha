@@ -1,6 +1,7 @@
 require 'validates_equality_of'
 
 class Payment::Notification < ActiveRecord::Base
+  attr_accessible :notification
   belongs_to  :payment
   delegate    :account, :amount, :to => :payment, :prefix => true
 

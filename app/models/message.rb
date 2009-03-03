@@ -1,11 +1,11 @@
 require 'validates_as_tanzanian_mobile_number'
 
 class Message < ActiveRecord::Base
+  attr_accessible :recipient, :text
+  
   validate_on_create :account_balance_sufficient?
-
   validates_presence_of :recipient
   validates_as_tanzanian_mobile_number :recipient
-
   validates_presence_of :text
   validates_length_of :text, :maximum => 160, :allow_blank => true, :unless => :binary?
   validates_length_of :text, :maximum => 280, :allow_blank => true, :if => :binary?

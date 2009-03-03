@@ -77,20 +77,42 @@ sw:
   # ===========================================================================
   activerecord:
     models:
+      account: 'Akaunti'
+      account/entry: 'Entry' # FIXME
+      administrator: 'Mratibu'
       message: 'Ujumbe'
+      invitation: 'Mwaliko'
+      payment: 'Malipo'
       payment/notification: 'Malipo'
+      subscriber: 'Aliyejiandikisha'
+      user: 'Mtumiaji'
+      vcard: 'VCard' # TODO reconsider
 
     attributes:
       account:
         invitation_code: 'Namba ya mwaliko'
         subdomain: 'Subdomain'
+        users_attributes: 'Watumiaji'
+      account/entry:
+        amount: 'Kiasi'
+        source: 'Chanzo'
+      administrator:
+        email: 'Anuani ya barua pepe'
+        password: 'Neno au namba ya siri'
+        password_confirmation: 'Thibitisha neno au namba ya siri'
       administrator_session:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
         remember_me: 'Nikumbuke'
+      invitation:
+        email: 'Anuani ya barua pepe'
       message:
         recipient: 'Mpokeaji'
         text: 'Ujumbe'
+      payment:
+        cents: 'Senti'
+      payment/notification:
+        notification: 'Taarifa'
       subscriber:
         email: 'Anuani ya barua pepe'
         name: 'Jina'
@@ -102,6 +124,10 @@ sw:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'
         remember_me: 'Nikumbuke'
+      vcard:
+        name: 'Jina'
+        number: 'Namba ya simu'
+        recipient: 'Mpokeaji'
     errors:
       messages:
         equality: 'inatakiwa iwe {{expected_value}}'
