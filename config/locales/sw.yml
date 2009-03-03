@@ -12,11 +12,6 @@ sw:
       entries:
         caption: 'Muhtasari wa akaunti yako'
 
-  messages:
-    new:
-      submit: 'Tuma'
-      title: 'Ujumbe Mpya'
-
   payments:
     form:
       prompt: 'Ongeza'
@@ -29,6 +24,11 @@ sw:
       blurb: 'Fahamu ni lini tutazindua--na unaweza kupata mwaliko wa majaribio.'
       submit: 'Jiandikishe'
       title: 'Jiandikishe'
+
+  text_messages:
+    new:
+      submit: 'Tuma'
+      title: 'Ujumbe Mpya'
 
   user_sessions:
     new:
@@ -80,11 +80,12 @@ sw:
       account: 'Akaunti'
       account/entry: 'Entry' # FIXME
       administrator: 'Mratibu'
-      message: 'Ujumbe'
       invitation: 'Mwaliko'
+      message: 'Ujumbe'
       payment: 'Malipo'
       payment/notification: 'Malipo'
       subscriber: 'Aliyejiandikisha'
+      text_message: 'Ujumbe'
       user: 'Mtumiaji'
       vcard: 'VCard' # TODO reconsider
 
@@ -108,7 +109,6 @@ sw:
         email: 'Anuani ya barua pepe'
       message:
         recipient: 'Mpokeaji'
-        text: 'Ujumbe'
       payment:
         cents: 'Senti'
       payment/notification:
@@ -116,6 +116,9 @@ sw:
       subscriber:
         email: 'Anuani ya barua pepe'
         name: 'Jina'
+      text_message:
+        recipient: 'Mpokeaji'
+        text: 'Ujumbe'
       user:
         email: 'Anuani ya barua pepe'
         password: 'Neno au namba ya siri'

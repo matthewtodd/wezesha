@@ -1,5 +1,6 @@
 message:
   id: 1
+  type: TextMessage
   recipient: '255712345689'
   text: 'Hello, there.'
   user: matthewtodd

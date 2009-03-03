@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   # = Subdomains                                                                =
   # =============================================================================
   map.with_options(:conditions => { :subdomain => true }) do |account|
-    account.resources :messages, :vcards, :only => [:new, :create, :show]
+    account.resources :text_messages, :vcards, :only => [:new, :create, :show]
 
     account.resources :payments, :only => [:create] do |payment|
       payment.resources :notifications, :only => [:create], :controller => 'payments/notifications'

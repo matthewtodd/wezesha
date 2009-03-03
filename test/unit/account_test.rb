@@ -51,7 +51,7 @@ class AccountTest < ActiveSupport::TestCase
     end
 
     should 'not have enough credit to send a message' do
-      assert !@account.sufficient_balance_for?(Message.make_unsaved)
+      assert !@account.sufficient_balance_for?(TextMessage.make_unsaved)
     end
 
     context 'with some entries in it' do
@@ -65,7 +65,7 @@ class AccountTest < ActiveSupport::TestCase
       end
 
       should 'have enough credit to send a message' do
-        assert @account.sufficient_balance_for?(Message.make_unsaved)
+        assert @account.sufficient_balance_for?(TextMessage.make_unsaved)
       end
     end
   end

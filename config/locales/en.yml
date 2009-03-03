@@ -12,11 +12,6 @@ en:
       entries:
         caption: 'Recent activity'
 
-  messages:
-    new:
-      submit: 'Send'
-      title: 'New Message'
-
   payments:
     form:
       prompt: 'Add'
@@ -29,6 +24,11 @@ en:
       blurb: 'Find out when we launch--and maybe get a beta invite?'
       submit: 'Subscribe'
       title: 'Subscribe'
+
+  text_messages:
+    new:
+      submit: 'Send'
+      title: 'New Text Message'
 
   user_sessions:
     new:
@@ -78,6 +78,7 @@ en:
   activerecord:
     models:
       payment/notification: 'Payment'
+      text_message: 'Text Message'
       vcard: 'VCard'
 
     attributes:

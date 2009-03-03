@@ -6,7 +6,7 @@ Feature: Send a Message
   Scenario: Web UI
     Given I am signed in to acme as developer@acme.example.com
     And I have made a payment for 2 dollars
-    And I am on the new message page for acme
+    And I am on the new text message page for acme
     When I fill in "Recipient" with some phone number
     And I fill in "Text" with "Hi, I'm testing out the system."
     And I press "Send"
@@ -16,7 +16,7 @@ Feature: Send a Message
   # FIXME move translation tests to some unit test somewhere
   Scenario: Web UI Localization
     Given I am signed in to acme as developer@acme.example.com
-    And I am on the new message page for acme
+    And I am on the new text message page for acme
     When I follow "Kiswahili"
     Then I should not see "translation missing"
   

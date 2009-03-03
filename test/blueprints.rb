@@ -38,12 +38,6 @@ User.blueprint(:with_credit) do
   account { Account.make { |account| account.entries.make(:credit) } }
 end
 
-Message.blueprint do
-  user
-  recipient { Sham.mobile_number }
-  text { Faker::Lorem.sentence }
-end
-
 Payment.blueprint do
   user
   amount { Money.dollars(5) }
@@ -53,8 +47,14 @@ Payment::Notification.blueprint do
   payment
 end
 
+TextMessage.blueprint do
+  user
+  recipient { Sham.mobile_number }
+  text { Faker::Lorem.sentence }
+end
+
 Vcard.blueprint do
-  user { User.make(:account => Account.make { |account| account.entries.make(:credit) }) }
+  user
   recipient { Sham.mobile_number }
   name { Sham.name }
   number { Sham.mobile_number }

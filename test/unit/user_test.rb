@@ -5,5 +5,7 @@ class UserTest < ActiveSupport::TestCase
 
   should_be_authentic
   should_belong_to :account
-  should_have_many :messages
+  should_have_many :payments
+  should_have_many :text_messages
+  should_have_many :vcards
 end

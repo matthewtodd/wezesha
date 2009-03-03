@@ -1,6 +1,6 @@
 class Payment < ActiveRecord::Base
   attr_accessible :cents
-  
+
   belongs_to  :user
   composed_of :amount, :class_name => 'Money', :mapping => %w(cents cents)
   delegate :account, :to => :user

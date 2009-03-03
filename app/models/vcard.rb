@@ -3,17 +3,20 @@ require 'validates_as_tanzanian_mobile_number'
 class Vcard < Message
   HEADER = '06050423F40000'
 
-  attr_accessible :recipient, :name, :number
+  attr_accessible :name, :number
   attr_accessor :name, :number
   before_validation :generate_text
   validates_presence_of :name, :number
   validates_as_tanzanian_mobile_number :number
+  validates_length_of :text, :maximum => 280
 
   def binary?
     true
   end
 
-  # FIXME figure out if we need to calculate a different cost for sending vcards
+  def cost
+    Money.cents(5)
+  end
 
   private
 

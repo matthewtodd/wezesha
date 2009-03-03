@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Payment::NotificationTest < ActiveSupport::TestCase
   should_not_allow_mass_assignment_of *any_attribute_other_than(:notification)
-  
+
   should_belong_to :payment
 
   def from_paypal_notification(parameters)

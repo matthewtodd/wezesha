@@ -4,7 +4,6 @@ class Payment::Notification < ActiveRecord::Base
   attr_accessible :notification
   belongs_to  :payment
   delegate    :account, :amount, :to => :payment, :prefix => true
-
   composed_of :notification, :class_name => 'ActiveMerchant::Billing::Integrations::Paypal::Notification', :mapping => %w(notification raw)
   delegate    :account, :amount, :complete?, :currency, :to => :notification, :prefix => true
 
@@ -18,7 +17,7 @@ class Payment::Notification < ActiveRecord::Base
   # Make sure we don't record completed transactions twice.
   validates_uniqueness_of :status, :scope => :payment_id, :if => :notification_complete?
 
-  # Credit the user's account.
+  # Credit the account.
   after_create :credit_account, :if => :notification_complete?
 
   private
