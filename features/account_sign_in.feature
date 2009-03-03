@@ -17,11 +17,6 @@ Feature: Sign In
     And I press "Sign In"
     Then I should see "is invalid"
 
-  Scenario: Localized Sign In
-    Given I am on the sign in page for acme
-    When I follow "Kiswahili"
-    Then I should not see "translation missing"
-    
   Scenario: Sign In Required
     Given I am on the account page for acme
     Then I should see "Sign In"

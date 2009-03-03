@@ -34,8 +34,3 @@ Feature: Sign Up
     And I fill in "Password Confirmation" with "secret"
     And I press "Sign Up"
     Then I should see "has already been taken"
-
-  Scenario: Localized Sign Up
-    Given I am on the sign up page
-    When I follow "Kiswahili"
-    Then I should not see "translation missing"

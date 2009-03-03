@@ -13,13 +13,6 @@ Feature: Send a Message
     Then the message "Hi, I'm testing out the system." should be delivered to some phone number
     And the acme account should have less than 2 dollars in it
 
-  # FIXME move translation tests to some unit test somewhere
-  Scenario: Web UI Localization
-    Given I am signed in to acme as developer@acme.example.com
-    And I am on the new text message page for acme
-    When I follow "Kiswahili"
-    Then I should not see "translation missing"
-  
   Scenario: API
     Given I have made a payment for 2 dollars
     When I use the API to send "Hi, I'm testing out the Active Resource API." to some phone number
