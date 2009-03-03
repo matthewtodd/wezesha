@@ -1,17 +1,18 @@
-- form_for @user_session, :url => user_session_path, :html => { :class => :standard } do |form|
-  %h2= t('.title')
+.section
+  - form_for @user_session, :url => user_session_path, :html => { :class => :standard } do |form|
+    %h2= t('.title')
 
-  .field
-    = form.label :email, :append_text => form.error_message_on(:email)
-    = form.text_field :email
+    .field
+      = form.label :email, :append_text => form.error_message_on(:email)
+      = form.text_field :email
 
-  .field
-    = form.label :password, :append_text => form.error_message_on(:password)
-    = form.password_field :password
+    .field
+      = form.label :password, :append_text => form.error_message_on(:password)
+      = form.password_field :password
 
-  .field.check_box
-    = form.check_box :remember_me
-    = form.label :remember_me
+    .field.check_box
+      = form.check_box :remember_me
+      = form.label :remember_me
 
-  .submit
-    = form.submit t('.title')
+    .submit
+      = form.submit t('.title')

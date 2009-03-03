@@ -9,6 +9,12 @@ sw:
       title: 'Jiandikishe'
     show:
       balance: 'Salio lako ni dollars {{balance}}.'
+      developer_api:
+        title: 'Maelezo kwa Waendelezaji'
+        blurb: 'Wezesha inatumia njia RESTful ya XML-kupitia-HTTP ambayo itakuwa inafahamika zaidi na watumiaji wa Rails na ActiveResource.'
+        curl: "Unaweza kutuma ujumbe mfupi kwa njia ya curl kama ifuatavyo:"
+        active_resource: 'Au kupitia ActiveResource:'
+        github: 'Maelezo zaidi yanapatikana katika kiunganishi hiki cha <a href="http://github.com/matthewtodd/wezesha-client">projekti ya wezesha-client katika GitHub</a>.'
       entries:
         caption: 'Muhtasari wa akaunti yako'
 
@@ -143,6 +149,10 @@ sw:
           attributes:
             base:
               insufficient_balance: 'Salio lako ni dogo mno'
+            recipient:
+              empty: 'hatakiwi kuwa wazi'
+              blank: 'hatakiwi kuwa wazi'
+              invalid: 'hafai'
             text:
               empty: 'hautakiwi kuwa wazi'
               blank: 'hautakiwi kuwa wazi'

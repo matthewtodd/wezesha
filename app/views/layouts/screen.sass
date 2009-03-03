@@ -54,6 +54,11 @@ body
       background-color: #edd
       color: #000
 
+  .section
+    +rounded-corner-box
+    background-color: #ddd
+    color: #000
+
   h2
     font-size: 1.5em
     margin-bottom: 0.75em
@@ -61,49 +66,16 @@ body
   p
     margin-bottom: 0.75em
 
-  form.inline
-    color: #444
-    margin-bottom: 0.75em
-    vertical-align: baseline
-    input, select, textarea
-      font-size: 1.25em
-
-  form.standard
-    +rounded-corner-box
-    background-color: #ddd
-    color: #000
-
-    .field
-      margin-bottom: 0.75em
-
-      label
-        color: #444
-        display: block
-
-        .formError
-          color: #511
-          display: inline
-
-      input, select, textarea
-        font-size: 1.25em
-
-      textarea
-        height: 5em
-
-      .fieldWithErrors
-        display: inline
-
-    .check_box
-      label
-        display: inline
-
-    .submit
-      input
-        font-size: 1.25em
+  pre.code
+    background-color: #111
+    color: #fff
+    font-family: Monaco, sans-serif
+    font-size: 12px
+    line-height: 16px
+    margin-bottom: 1.25em
+    padding: 1em
 
   .subscribers
-    +rounded-corner-box
-    background-color: #ddd
     color: #222
 
     table
@@ -150,11 +122,6 @@ body
       a.unsubscribe:hover
         background-color: #766
 
-  .account
-    +rounded-corner-box
-    background-color: #ddd
-    color: #000
-
   .money.negative
     color: #900
 
@@ -174,6 +141,7 @@ body
       padding: 0.5em 1em
     a
       color: #444
+
 #footer
   background-color: #111
   color: #666

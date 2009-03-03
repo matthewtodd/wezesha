@@ -1,13 +1,14 @@
-- form_for @text_message, :html => { :class => :standard } do |form|
-  %h2= t('.title')
+.section
+  - form_for @text_message, :html => { :class => :standard } do |form|
+    %h2= t('.title')
 
-  .field
-    = form.label :recipient, :append_text => form.error_message_on(:recipient)
-    = form.text_field(:recipient)
+    .field
+      = form.label :recipient, :append_text => form.error_message_on(:recipient)
+      = form.text_field(:recipient)
 
-  .field
-    = form.label :text, :append_text => form.error_message_on(:text)
-    = form.text_area(:text)
+    .field
+      = form.label :text, :append_text => form.error_message_on(:text)
+      = form.text_area(:text)
 
-  .submit
-    = form.submit t('.submit')
+    .submit
+      = form.submit t('.submit')

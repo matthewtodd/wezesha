@@ -1,23 +1,24 @@
-- form_for prepare_new_account(@account), :html => { :class => :standard } do |form|
-  %h2= t('.title')
+.section
+  - form_for prepare_new_account(@account), :html => { :class => :standard } do |form|
+    %h2= t('.title')
 
-  .field
-    = form.label :invitation_code, :append_text => form.error_message_on(:invitation_id)
-    = form.text_field(:invitation_code)
-  .field
-    = form.label :subdomain, :append_text => form.error_message_on(:subdomain)
-    = form.text_field(:subdomain).concat('.').concat(host_without_subdomain)
+    .field
+      = form.label :invitation_code, :append_text => form.error_message_on(:invitation_id)
+      = form.text_field(:invitation_code)
+    .field
+      = form.label :subdomain, :append_text => form.error_message_on(:subdomain)
+      = form.text_field(:subdomain).concat('.').concat(host_without_subdomain)
 
-  - form.fields_for :users do |user_form|
-    .field
-      = user_form.label :email, :append_text => user_form.error_message_on(:email)
-      = user_form.text_field :email
-    .field
-      = user_form.label :password, :append_text => user_form.error_message_on(:password)
-      = user_form.password_field :password
-    .field
-      = user_form.label :password_confirmation, :append_text => user_form.error_message_on(:password_confirmation)
-      = user_form.password_field :password_confirmation
+    - form.fields_for :users do |user_form|
+      .field
+        = user_form.label :email, :append_text => user_form.error_message_on(:email)
+        = user_form.text_field :email
+      .field
+        = user_form.label :password, :append_text => user_form.error_message_on(:password)
+        = user_form.password_field :password
+      .field
+        = user_form.label :password_confirmation, :append_text => user_form.error_message_on(:password_confirmation)
+        = user_form.password_field :password_confirmation
 
-  .submit
-    = form.submit t('.title')
+    .submit
+      = form.submit t('.title')
