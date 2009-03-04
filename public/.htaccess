@@ -5,7 +5,7 @@ RewriteEngine on
 
 # http://no-www.org/
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ http://wezesha.co.tz$1 [R=301,L]
+RewriteRule ^(.*)$ http://wezesha.co.tz/$1 [R=301,L]
 
 # Maintenance page
 RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
