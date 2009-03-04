@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/routing-filter"]
 	path = vendor/plugins/routing-filter
 	url = git://github.com/matthewtodd/routing-filter.git
+[submodule "vendor/plugins/joyent_deployment"]
+	path = vendor/plugins/joyent_deployment
+	url = git://github.com/matthewtodd/joyent_deployment.git
