@@ -26,6 +26,11 @@ config.action_controller.perform_caching             = true
 # Enable threaded mode
 # config.threadsafe!
 
+# SubdomainFu would say the TLD of "wezesha.co.tz", is "co.tz"
+config.after_initialize do
+  SubdomainFu.tld_size = 2
+end
+
 config.to_prepare do
   MessageGateway.implementation = MessageGateway::StandardOut
 end
