@@ -13,6 +13,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'matthewtodd-default_association_attributes', :lib => 'default_association_attributes', :source => 'http://gems.github.com'
   config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
+  config.gem 'rack'
   config.gem 'RedCloth', :lib => 'redcloth'
 
   # Activate observers that should always be running
