@@ -1,17 +1,13 @@
 development:
-  action_mailer_delivery_method: :sendmail
-  action_mailer_host: wezesha:3000
-  action_mailer_sendmail_location: /usr/sbin/sendmail
-  action_mailer_sendmail_arguments: -i <%= ENV['USER'] %>
   bulk_sms_username: bob
   bulk_sms_password: secret
+  email: 'Wezesha <wezesha@wezesha.co.tz>'
   paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr
   paypal_account: bob@example.com
 
 test:
-  action_mailer_delivery_method: :test
-  action_mailer_host: test.host
   bulk_sms_username: bob
   bulk_sms_password: secret
+  email: 'Wezesha <wezesha@wezesha.co.tz>'
   paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr
   paypal_account: bob@example.com

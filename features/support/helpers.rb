@@ -52,7 +52,7 @@ end
 
 def paypal_notification_parameters(payment)
   {
-    :business => Application[:paypal_account],
+    :business => Application.paypal_account,
     :mc_currency => 'USD',
     :mc_gross => payment.amount.dollars,
     :payment_status => 'Completed',

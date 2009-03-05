@@ -119,6 +119,7 @@ sw:
         recipient: 'Mpokeaji'
       payment:
         cents: 'Senti'
+        item_name: 'Wezesha Credit' # FIXME with Joachim
       payment/notification:
         notification: 'Taarifa'
       subscriber:

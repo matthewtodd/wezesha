@@ -20,17 +20,20 @@ config.action_controller.perform_caching             = true
 # Enable serving of images, stylesheets, and javascripts from an asset server
 # config.action_controller.asset_host = "http://assets.example.com"
 
-# Disable delivery errors, bad email addresses will be ignored
+# Tell ActionMailer how to use sendmail.
+config.action_mailer.default_url_options     = { :host => 'wezesha.co.tz' }
+config.action_mailer.delivery_method         = :sendmail
 # config.action_mailer.raise_delivery_errors = false
+config.action_mailer.sendmail_settings       = { :location => '/usr/local/bin/sendmail', :arguments => '-i -t' }
 
 # Enable threaded mode
 # config.threadsafe!
 
-# SubdomainFu would say the TLD of "wezesha.co.tz", is "co.tz"
+# SubdomainFu would say the TLD of "wezesha.co.tz" is "co.tz"
 config.after_initialize do
   SubdomainFu.tld_size = 2
 end
 
 config.to_prepare do
-  MessageGateway.implementation = MessageGateway::StandardOut
+  MessageGateway.implementation = MessageGateway::BulkSMS
 end

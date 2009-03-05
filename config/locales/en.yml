@@ -92,6 +92,8 @@ en:
     attributes:
       account:
         users_attributes: 'Users'
+      payment:
+        item_name: 'Wezesha Credit'
 
     errors:
       messages:

@@ -1,7 +1,7 @@
 notification:
   id: 1
   payment_id: 1
-  notification: <%= { :business => Application[:paypal_account], :mc_currency => 'USD', :mc_gross => '10.00', :payment_status => 'Completed' }.to_query %>
+  notification: <%= { :business => Application.paypal_account, :mc_currency => 'USD', :mc_gross => '10.00', :payment_status => 'Completed' }.to_query %>
   status: 'Completed'
   created_at: <%= 5.days.ago.utc.to_s(:db) %>
   updated_at: <%= 5.days.ago.utc.to_s(:db) %>

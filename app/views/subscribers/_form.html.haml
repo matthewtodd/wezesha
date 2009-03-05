@@ -1,6 +1,6 @@
 - form_for subscriber, :html => { :class => :standard } do |form|
   %h2= t('.title')
-  %p= textilize(t('.blurb'))
+  = textilize(t('.blurb'))
 
   .field
     = form.label :name, :append_text => form.error_message_on(:name)

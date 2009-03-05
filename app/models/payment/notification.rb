@@ -10,7 +10,7 @@ class Payment::Notification < ActiveRecord::Base
   before_validation :set_status
 
   # Make sure we've received a legitimate notification from Paypal.
-  validates_equality_of :notification_account,  :with => Application[:paypal_account]
+  validates_equality_of :notification_account,  :with => Application.paypal_account
   validates_equality_of :notification_amount,   :with => :payment_amount
   validates_equality_of :notification_currency, :with => 'USD'
 

@@ -19,7 +19,7 @@ class PaymentTest < ActiveSupport::TestCase
       end
 
       should 'use business from application configuration' do
-        assert_equal Application[:paypal_account], @parameters[:business]
+        assert_equal Application.paypal_account, @parameters[:business]
       end
 
       should 'use amount from payment' do

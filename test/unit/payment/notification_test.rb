@@ -10,7 +10,7 @@ class Payment::NotificationTest < ActiveSupport::TestCase
       :mc_currency => 'USD',
       :mc_gross => @payment.amount.dollars,
       :payment_status => 'Pending',
-      :receiver_email => Application[:paypal_account]
+      :receiver_email => Application.paypal_account
     }
 
     @payment.notifications.make_unsaved :notification => ActiveMerchant::Billing::Integrations::Paypal::Notification.new(defaults.merge(parameters).to_query)
@@ -25,7 +25,7 @@ class Payment::NotificationTest < ActiveSupport::TestCase
       end
 
       should 'not invalidate notification if equal to paypal account' do
-        notification = from_paypal_notification(:receiver_email => Application[:paypal_account])
+        notification = from_paypal_notification(:receiver_email => Application.paypal_account)
         notification.valid?
         assert_equal [], notification.errors.full_messages
       end
