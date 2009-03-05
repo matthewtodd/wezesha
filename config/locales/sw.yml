@@ -86,7 +86,7 @@ sw:
   activerecord:
     models:
       account: 'Akaunti'
-      account/entry: 'Entry' # FIXME
+      account/entry: 'Entry' # TODO how do we say Account::Entry in Swahili?
       administrator: 'Mratibu'
       invitation: 'Mwaliko'
       message: 'Ujumbe'
@@ -95,7 +95,7 @@ sw:
       subscriber: 'Aliyejiandikisha'
       text_message: 'Ujumbe'
       user: 'Mtumiaji'
-      vcard: 'VCard' # TODO reconsider
+      vcard: 'VCard' # TODO how do we say VCard in Swahili?
 
     attributes:
       account:
@@ -119,7 +119,7 @@ sw:
         recipient: 'Mpokeaji'
       payment:
         cents: 'Senti'
-        item_name: 'Wezesha Credit' # FIXME with Joachim
+        item_name: 'Wezesha Credit' # TODO how do we say "Wezesha Credit" in Swahili?
       payment/notification:
         notification: 'Taarifa'
       subscriber:

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   acts_as_authentic :scope => :account_id
   belongs_to :account
   has_many :text_messages
-  has_many :vcards # FIXME get this out of here!
+  has_many :vcards
   has_many :payments
 
   delegate :sufficient_balance_for?, :to => :account

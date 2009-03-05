@@ -1,5 +1,5 @@
 Feature: Subscribe
-  In order to receive updates about the website and maybe get an invitation
+  In order to receive updates about the website and perhaps get an invitation
   As a developer
   I want to subscribe
 

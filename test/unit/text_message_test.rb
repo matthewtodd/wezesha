@@ -11,7 +11,7 @@ class TextMessageTest < ActiveSupport::TestCase
     should_not_allow_values_for :recipient, '254123456789', '255123', '+255712345689', 'not numbers'
 
     should_validate_presence_of :text
-    should_ensure_length_at_most :text, 160
+    should_ensure_length_in_range :text, 1..160, :short_message => :blank
     should_belong_to :user
 
     should 'cost 5 cents' do

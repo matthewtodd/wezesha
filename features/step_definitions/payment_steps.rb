@@ -4,7 +4,6 @@ Given /^I have made a payment for (\d+) dollars$/ do |amount|
 end
 
 Given /^I have not made any payments$/ do
-  assert_equal Money.dollars(0), current_account.balance
 end
 
 When /^I submit the PayPal form$/ do

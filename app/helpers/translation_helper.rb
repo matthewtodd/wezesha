@@ -1,4 +1,4 @@
-# FIXME remove this when Rails 2.3.1 is released.
+# FIXME remove this override of TranslationHelper.translate when Rails 2.3.1 is released.
 module TranslationHelper
   def translate(key, options = {})
     options[:raise] = true

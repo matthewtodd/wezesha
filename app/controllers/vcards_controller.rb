@@ -16,7 +16,6 @@ class VcardsController < ApplicationController
 
   private
 
-  # FIXME let's see if we can prevent an explosion of has_many's
   def build_vcard
     @vcard = current_user.vcards.build(params[:vcard])
   end
