@@ -10,10 +10,10 @@
 
 .section.secondary
   %h2= t('.developer_api.title')
-  %p.api_key= t('.developer_api.key', :key => current_user.single_access_token)
+  %p.api_token= t('.developer_api.token', :token => current_user.single_access_token)
   %h3= t('.developer_api.examples')
   %p= t('.developer_api.curl')
   %pre.code&= "curl --user   '#{current_user.single_access_token}:X' \\\n     --header 'Content-Type: application/xml' \\\n     --data   '<text-message><recipient>255712345689</recipient><text>Hello</text></text-message>' \\\n     #{text_messages_url(:xml, :locale => :en)}"
   %p= t('.developer_api.active_resource')
-  %pre.code&= "require 'rubygems'\ngem 'matthewtodd-wezesha-client'\nrequire 'wezesha/client'\n\nWezesha::Client.site = '#{account_url(:locale => :en)}'\nWezesha::Client.user = '#{current_user.single_access_token}'\n\nWezesha::TextMessage.create(:recipient => '255712345689', :text => 'Hello')"
+  %pre.code&= "require 'rubygems'\nrequire 'wezesha-api'\n\nWezesha.subdomain = '#{current_user.account.subdomain}'\nWezesha.token     = '#{current_user.single_access_token}'\n\nWezesha::TextMessage.create(:recipient => '255712345689', :text => 'Hello')"
   %p= t('.developer_api.github')

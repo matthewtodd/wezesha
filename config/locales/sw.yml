@@ -11,12 +11,11 @@ sw:
       balance: 'Salio lako ni dollars {{balance}}.'
       developer_api:
         title: 'Maelezo kwa Waendelezaji'
-        key: 'Ufunguo wako wa API ya Wezesha ni <span class="api_key">{{key}}</span>.'
+        token: 'Ufunguo wako wa API ya Wezesha ni <span class="api_token">{{token}}</span>.'
         examples: 'Mfano'
-        blurb: 'Wezesha inatumia njia RESTful ya XML-kupitia-HTTP ambayo itakuwa inafahamika zaidi na watumiaji wa Rails na ActiveResource.'
         curl: "Unaweza kutuma ujumbe mfupi kwa njia ya curl kama ifuatavyo:"
         active_resource: 'Au kupitia ActiveResource:'
-        github: 'Maelezo zaidi yanapatikana katika kiunganishi hiki cha <a href="http://github.com/matthewtodd/wezesha-client">projekti ya wezesha-client katika GitHub</a>.'
+        github: 'Maelezo zaidi yanapatikana katika kiunganishi hiki cha <a href="http://github.com/matthewtodd/wezesha-api">projekti ya wezesha-api katika GitHub</a>.'
       entries:
         caption: 'Muhtasari wa akaunti yako'
 

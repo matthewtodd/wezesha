@@ -11,12 +11,11 @@ en:
       balance: 'Your balance is {{balance}} dollars.'
       developer_api:
         title: 'Developer API'
-        key: 'Your Wezesha API key is <span class="api_key">{{key}}</span>.'
+        token: 'Your Wezesha API token is <span class="api_token">{{token}}</span>.'
         examples: 'Examples'
-        blurb: 'Wezesha uses a RESTful XML-over-HTTP API that will be familiar to users of Rails and ActiveResource.'
         curl: "Here's how you'd send a text message from the command line:"
         active_resource: 'Or via ActiveResource:'
-        github: 'Much more information is available at our <a href="http://github.com/matthewtodd/wezesha-client">wezesha-client project on GitHub</a>.'
+        github: 'Much more information is available at our <a href="http://github.com/matthewtodd/wezesha-api">wezesha-api project on GitHub</a>.'
       entries:
         caption: 'Recent activity'
 
