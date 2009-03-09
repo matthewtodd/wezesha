@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.0' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.1' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -13,7 +13,6 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'matthewtodd-default_association_attributes', :lib => 'default_association_attributes', :source => 'http://gems.github.com'
   config.gem 'mbleigh-subdomain-fu', :lib => 'subdomain-fu', :source => 'http://gems.github.com'
-  config.gem 'rack'
   config.gem 'RedCloth', :lib => 'redcloth'
 
   # Activate observers that should always be running
