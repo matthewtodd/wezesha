@@ -8,7 +8,7 @@ set :scm, :git
 set :local_repository, '.git'
 set :repository,  "git://github.com/matthewtodd/#{application}.git"
 set :branch, 'master'
-set :git_shallow_clone, 1
+set :deploy_via, :remote_cache
 set :git_enable_submodules, true
 
 set :group_writable, false
