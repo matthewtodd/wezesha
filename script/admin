@@ -1,45 +1,23 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'activeresource'
-require 'irb'
+RAILS_ENV = ARGV.shift || 'development'
+%w(irb rubygems activeresource).each { |lib| require lib }
+require File.expand_path('../../config/initializers/application.rb', __FILE__)
 
 class Base < ActiveResource::Base
-  self.site = 'http://localhost:3000/admin/'
-  self.user = 'kpd1sLITaytAgMTu64iB'
-
-  def self.has_many(association)
-    define_method(association) do
-      super.tap { |array| array.extend(has_many_association(self, find_or_create_resource_for_collection(association))) }
-    end
-  end
-
-  def has_many_association(owner, target_class)
-    Module.new do
-      define_method(:owner) { owner }
-      define_method(:target_class) { target_class }
-
-      def build(attributes = {})
-        target_class.new(default_attributes.merge(attributes))
-      end
-
-      def create(attributes = {})
-        target_class.create(default_attributes.merge(attributes))
-      end
-
-      def default_attributes
-        { owner.class.name.foreign_key => owner.id }
-      end
-    end
-  end
+  self.site = Application.admin_api_site
+  self.user = Application.admin_api_token
 end
 
 class Account < Base
-  has_many :entries
 end
 
 class Account::Entry < Base
   self.prefix = '/admin/accounts/:account_id/'
 end
 
+class Subscriber < Base
+end
+
+puts "Conecting to #{Application.admin_api_site}"
 IRB.start(__FILE__)

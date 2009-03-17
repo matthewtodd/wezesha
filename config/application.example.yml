@@ -1,4 +1,6 @@
 development:
+  admin_api_site: http://localhost:3000/admin/
+  admin_api_token: kpd1sLITaytAgMTu64iB
   bulk_sms_username: bob
   bulk_sms_password: secret
   email: 'Wezesha <wezesha@wezesha.co.tz>'
@@ -6,6 +8,8 @@ development:
   paypal_account: wezesha@example.com
 
 test:
+  admin_api_site: http://test.host/admin/
+  admin_api_token: I_DONT_THINK_THIS_VALUE_MATTERS
   bulk_sms_username: bob
   bulk_sms_password: secret
   email: 'Wezesha <wezesha@wezesha.co.tz>'

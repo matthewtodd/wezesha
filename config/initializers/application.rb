@@ -12,8 +12,8 @@ class ApplicationConfiguration
   end
 
   def configuration_file
-    Rails.root.join('config', 'application.yml')
+    File.expand_path('../../application.yml', __FILE__)
   end
 end
 
-Application = ApplicationConfiguration.new(Rails.env)
+Application = ApplicationConfiguration.new(RAILS_ENV)
