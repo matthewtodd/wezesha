@@ -20,6 +20,10 @@ ActionController::Routing::Routes.draw do |map|
   # =============================================================================
   map.with_options(:conditions => { :subdomain => false }) do |site|
     site.namespace :admin do |admin|
+      admin.resources :accounts, :only => [:index] do |account|
+        account.resources :entries, :only => [:create, :show], :controller => 'accounts/entries'
+      end
+
       admin.resources :subscribers, :only => [:index, :destroy] do |subscriber|
         subscriber.resources :invitations, :only => [:create], :controller => 'subscribers/invitations'
       end

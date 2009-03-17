@@ -1,4 +1,4 @@
-Feature: Administrator Unsubscriber Subscriber
+Feature: Administrator Unsubscribes Subscriber
   In order to remove duplicate subscribers and keep out the riff raff
   As an Administrator
   I want to unsubscribe a Subscriber

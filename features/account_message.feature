@@ -11,7 +11,7 @@ Feature: Send a Message
     And I fill in "Text" with "Hi, I'm testing out the system."
     And I press "Send"
     Then the message "Hi, I'm testing out the system." should be delivered to some phone number
-    And the acme account should have less than 2 dollars in it
+    And the acme account balance should be less than 2 dollars
 
   Scenario: API
     Given I have made a payment for 2 dollars

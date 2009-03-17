@@ -3,11 +3,11 @@ development:
   bulk_sms_password: secret
   email: 'Wezesha <wezesha@wezesha.co.tz>'
   paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr
-  paypal_account: bob@example.com
+  paypal_account: wezesha@example.com
 
 test:
   bulk_sms_username: bob
   bulk_sms_password: secret
   email: 'Wezesha <wezesha@wezesha.co.tz>'
   paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr
-  paypal_account: bob@example.com
+  paypal_account: wezesha@example.com

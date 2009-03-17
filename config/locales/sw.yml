@@ -103,6 +103,7 @@ sw:
         users_attributes: 'Watumiaji'
       account/entry:
         amount: 'Kiasi'
+        cents: 'Senti' # TODO Joachim, is this right?
         source: 'Chanzo'
       administrator:
         email: 'Anuani ya barua pepe'

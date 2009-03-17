@@ -33,6 +33,10 @@ class Money
     @cents < 0
   end
 
+  def -(other)
+    self.class.cents(cents - other.cents)
+  end
+
   def to_s
     '%01.2f' % dollars
   end
