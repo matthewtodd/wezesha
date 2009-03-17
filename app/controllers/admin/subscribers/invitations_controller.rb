@@ -7,10 +7,13 @@ class Admin::Subscribers::InvitationsController < Admin::ApplicationController
 
   def create
     if @invitation.save
-      redirect_to admin_subscribers_path(:anchor => dom_id(@subscriber))
+      respond_to do |format|
+        format.xml { render :xml => @invitation.to_xml(:root => :invitation), :status => :created, :location => admin_subscriber_invitation_url(@subscriber, @invitation, :format => :xml) }
+      end
     else
-      flash[:error] = @invitation.errors.full_messages.to_sentence
-      redirect_to admin_subscribers_path
+      respond_to do |format|
+        format.xml { render :xml => @invitation.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

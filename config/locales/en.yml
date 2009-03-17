@@ -45,33 +45,6 @@ en:
       title: 'Sign Out'
 
   # ===========================================================================
-  # = Administrators                                                          =
-  # ===========================================================================
-  admin:
-    administrator_sessions:
-      new:
-        required: 'Please sign in first.'
-        title: 'Sign In'
-      destroy:
-        title: 'Sign Out'
-    pages:
-      index:
-        title: 'Welcome'
-    subscribers:
-      index:
-        title: 'Subscribers'
-      subscriber:
-        destroy:
-          confirm: 'Are you sure you want to unsubscribe {{email}}?'
-          submit: 'Unsubscribe'
-        invite:
-          confirm: 'Are you sure you want to invite {{email}}?'
-          count:
-            one: '{{count}} Invitation'
-            other: '{{count}} Invitations'
-          submit: 'Invite'
-
-  # ===========================================================================
   # = ActionMailer                                                            =
   # ===========================================================================
   mailer:

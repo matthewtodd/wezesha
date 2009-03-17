@@ -34,7 +34,7 @@ def existing_user(email)
   current_account.users.find_by_email!(email)
 end
 
-def http_basic_authentication_credentials(user = current_user)
+def http_basic_authentication_credentials(user)
   ActionController::HttpAuthentication::Basic.encode_credentials(user.single_access_token, 'X')
 end
 

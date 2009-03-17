@@ -45,33 +45,6 @@ sw:
       title: 'Kutoka'
 
   # ===========================================================================
-  # = Administrators                                                          =
-  # ===========================================================================
-  admin:
-    administrator_sessions:
-      new:
-        required: 'Tafadhali ingia kwanza.'
-        title: 'Kuingia'
-      destroy:
-        title: 'Kutoka'
-    pages:
-      index:
-        title: 'Karibu'
-    subscribers:
-      index:
-        title: Waliojiandikisha
-      subscriber:
-        destroy:
-          confirm: 'Je, unahakika unataka kumwondoa {{email}}?'
-          submit: 'Mwondoe'
-        invite:
-          confirm: 'Je, unahakika unataka kumwalika {{email}}?'
-          count:
-            one: 'Mwaliko {{count}}'
-            other: 'Mialiko {{count}}'
-          submit: 'Mwalike'
-
-  # ===========================================================================
   # = ActionMailer                                                            =
   # ===========================================================================
   mailer:

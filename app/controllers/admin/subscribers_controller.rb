@@ -3,18 +3,14 @@ class Admin::SubscribersController < Admin::ApplicationController
 
   def index
     @subscribers = Subscriber.all
-
     respond_to do |format|
-      format.html
-      format.xml { render :xml => @subscribers.to_xml(:include => :invitations) }
+      format.xml { render :xml => @subscribers }
     end
   end
 
   def destroy
     @subscriber.destroy
-
     respond_to do |format|
-      format.html { redirect_to admin_subscribers_path }
       format.xml  { render :nothing => true }
     end
   end

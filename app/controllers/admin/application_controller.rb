@@ -21,24 +21,16 @@ class Admin::ApplicationController < ActionController::Base
     @current_administrator_session = AdministratorSession.find
   end
 
-  def redirect_back_or_to(location)
-    redirect_to session.delete(:return_to) || location
-  end
-
   private
 
   def set_locale
     I18n.locale = params[:locale] if params[:locale]
   end
 
-  def store_location
-    session[:return_to] = request.request_uri
-  end
-
   def administrator_sign_in_required
     unless current_administrator
       respond_to do |format|
-        format.html { store_location; flash[:error] = t('admin.administrator_sessions.new.required'); redirect_to new_admin_administrator_session_path }
+        format.html { render :text => interpret_status(:not_found), :status => :not_found }
         format.any  { render :nothing => true, :status => :unauthorized }
       end
     end

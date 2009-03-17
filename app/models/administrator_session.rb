@@ -1,5 +1,5 @@
 class AdministratorSession < Authlogic::Session::Base
-  find_with :session, :cookie, :api_key
+  find_with :api_key
 
   def valid_api_key?
     controller.authenticate_with_http_basic do |api_key, _|

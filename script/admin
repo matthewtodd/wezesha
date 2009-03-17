@@ -19,5 +19,9 @@ end
 class Subscriber < Base
 end
 
+class Subscriber::Invitation < Base
+  self.prefix = '/admin/subscribers/:subscriber_id/'
+end
+
 puts "Conecting to #{Application.admin_api_site}"
 IRB.start(__FILE__)

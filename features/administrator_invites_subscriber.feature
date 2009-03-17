@@ -4,9 +4,8 @@ Feature: Administrator Invites Subscriber
   I want to send an Invitation to a Subscriber
 
   Scenario: New Invitation
-    Given I am signed in as an administrator
-    And I am on the administrative subscribers page
-    When I follow "Invite" for existing subscriber "subscriber@example.com"
-    Then existing subscriber "subscriber@example.com" should have 1 Invitation
+    Given existing subscriber "subscriber@example.com" has 0 Invitations
+    When I use the Admin API to invite existing subscriber "subscriber@example.com"
+    Then I should receive a Created status
+    And existing subscriber "subscriber@example.com" should have 1 Invitation
     And an email should be sent to "subscriber@example.com"
-    

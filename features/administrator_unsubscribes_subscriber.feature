@@ -4,7 +4,6 @@ Feature: Administrator Unsubscribes Subscriber
   I want to unsubscribe a Subscriber
   
   Scenario: Unsubscribe Subscriber
-    Given I am signed in as an administrator
-    And I am on the administrative subscribers page
-    When I follow "Unsubscribe" for existing subscriber "subscriber@example.com"
-    Then I should not see "subscriber@example.com"
+    When I use the Admin API to delete existing subscriber "subscriber@example.com"
+    Then I should receive an OK status
+    And existing subscriber "subscriber@example.com" should no longer exist

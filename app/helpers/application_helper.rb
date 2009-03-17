@@ -13,22 +13,6 @@ module ApplicationHelper
     end
   end
 
-  # Step 3, The size: You can specify a "size" or "s" parameter to the URL
-  # between 1 and 512 (pixels.) If you ommit this step we use a default size
-  # of 80 pixels.
-  #
-  # Step 4, The rating: You can specify a "rating" or "r" parameter to the URL
-  # of g, pg, r, or x. If you ommit this step we use a default rating of g.
-  #
-  # Step 5, The default: You can specify a "default" or "d" parameter to the
-  # URL, this should be urlencoded so as to make it to our servers intact.
-  # There are "special" values that you may pass to this parameter which
-  # produce dynamic default images. These are "identicon" "monsterid" and
-  # "wavatar". If omitted we will serve up our default image, the blue G.
-  def gravatar(email, size=32)
-    image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}?size=#{size}", :width => size, :height => size
-  end
-
   def host_without_subdomain
     SubdomainFu.host_without_subdomain(request.host)
   end

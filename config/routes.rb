@@ -23,13 +23,9 @@ ActionController::Routing::Routes.draw do |map|
       admin.resources :accounts, :only => [:index] do |account|
         account.resources :entries, :only => [:create, :show], :controller => 'accounts/entries'
       end
-
       admin.resources :subscribers, :only => [:index, :destroy] do |subscriber|
-        subscriber.resources :invitations, :only => [:create], :controller => 'subscribers/invitations'
+        subscriber.resources :invitations, :only => [:create, :show], :controller => 'subscribers/invitations'
       end
-
-      admin.resource :administrator_session, :only => [:new, :create, :destroy], :as => 'session'
-      admin.root :controller => 'pages'
     end
 
     site.resources :accounts, :only => [:new, :create]
