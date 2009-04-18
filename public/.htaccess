@@ -30,4 +30,4 @@ RewriteCond %{DOCUMENT_ROOT}/index.html -f
 RewriteRule ^.*$ /index.html [PT,L]
 
 # Finally, proxy over to Mongrel.
-RewriteRule ^(.*)$ http://127.0.0.1:4005/$1 [P,QSA,L]
+RewriteRule ^(.*)$ http://127.0.0.1:10193/$1 [P,QSA,L]
