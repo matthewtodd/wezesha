@@ -53,8 +53,8 @@ module ApplicationHelper
     def localized(method_name)
       I18n.t(method_name, :scope => [:activerecord, :attributes, object.class.name.underscore], :raise => true)
     rescue I18n::MissingTranslationData => exception
-      case I18n.locale
-      when I18n.default_locale; method_name.to_s.humanize
+      case I18n.locale.to_s
+      when I18n.default_locale.to_s; method_name.to_s.humanize
       else exception.message
       end
     end
